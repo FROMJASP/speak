@@ -8,166 +8,103 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
-import { AlertTriangle, ArrowUpRight, Clock, Calendar, BarChart3, UserCheck, CalendarDays } from "lucide-react"
+import { AlertTriangle, ArrowUpRight, UserCheck, CalendarDays } from "lucide-react"
 import AudioTimeDisplay from "../audio-time-display"
 import { pricingPlans, formatTimeFromSeconds, formatAudioTime, type PlanTier } from "@/data/pricing-plans"
 import { getUsageColorClass, getUsageStatusMessage, getUsageTextColorClass } from "@/utils/usage-utils"
 import { usePlan } from "./plan-context"
 import { Input } from "@/components/ui/input"
 import FixedPlanPreviewModal from "./fixed-plan-preview-modal"
-
-// Function to format time in a compact way (e.g., "1h 30m")
-const formatTimeCompact = (seconds: number): string => {
-  const hours = Math.floor(seconds / 3600)
-  const minutes = Math.floor((seconds % 3600) / 60)
-
-  let result = ""
-  if (hours > 0) {
-    result += `${hours}h `
-  }
-  if (minutes > 0) {
-    result += `${minutes}m`
-  }
-
-  return result.trim() || "0m"
-}
-
-// Get a date from 2 weeks ago (for demonstration purposes)
-const getSignupDate = (): string => {
-  const today = new Date()
-  const twoWeeksAgo = new Date(today)
-  twoWeeksAgo.setDate(today.getDate() - 14) // Subtract 14 days
-  return twoWeeksAgo.toISOString().split("T")[0] // Return in YYYY-MM-DD format
-}
-
-// Get the next billing date (for demonstration purposes)
-const getNextBillingDate = (): string => {
-  const today = new Date()
-  const nextMonth = new Date(today)
-  nextMonth.setMonth(today.getMonth() + 1)
-  return nextMonth.toISOString().split("T")[0] // Return in YYYY-MM-DD format
-}
+import PlanSummaryCards from "./plan-preview/PlanSummaryCards"
+import {
+  formatDateForDisplay,
+  formatTimeSince,
+} from "./utils/date-utils"
+import {
+  formatTimeCompact,
+  getSignupDate,
+  getNextBillingDate,
+  getDefaultUsagePercentage,
+  getPlanDetails,
+  calcUsagePercentage,
+  calcUsedSecondsFromPercentage,
+  isDowngrade,
+} from "./utils/plan-usage-utils"
 
 export default function PlanPreviewPanel() {
   const { currentPlan, usedSeconds: contextUsedSeconds, updatePlanAndUsage } = usePlan()
   const [selectedPlan, setSelectedPlan] = useState<PlanTier>(currentPlan)
-  const [usagePercentage, setUsagePercentage] = useState(() => {
-    // Initialize with a default percentage based on the plan
-    if (currentPlan === "Free" || currentPlan === "Starter") {
-      return 85 // Higher usage for free/starter plans
-    } else if (currentPlan === "Company") {
-      return 40 // Lower usage for company plan
-    }
-    return 70 // Default for other plans
-  })
-  const [accumulatedMonths, setAccumulatedMonths] = useState(1) // Default to 1 month (no accumulation)
+  const [usagePercentage, setUsagePercentage] = useState(() => getDefaultUsagePercentage(currentPlan))
+  const [accumulatedMonths, setAccumulatedMonths] = useState(1)
   const [signupDate, setSignupDate] = useState(getSignupDate())
   const [effectiveDate, setEffectiveDate] = useState(getNextBillingDate())
   const [showDowngradePreview, setShowDowngradePreview] = useState(false)
-  const [actualUsedSeconds, setActualUsedSeconds] = useState(0) // Store the actual used seconds
+  const [actualUsedSeconds, setActualUsedSeconds] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Update selected plan when context changes
+  // Update selected plan and usage when context changes
   useEffect(() => {
     setSelectedPlan(currentPlan)
-    // Calculate the current usage percentage based on contextUsedSeconds
-    const plan = pricingPlans.find((p) => p.tier === currentPlan) || pricingPlans[0]
+    const plan = getPlanDetails(currentPlan)
     const totalSecs = plan.audioMinutes * 60
-    const percentage = Math.round((contextUsedSeconds / totalSecs) * 100)
-    setUsagePercentage(percentage)
+    setUsagePercentage(calcUsagePercentage(contextUsedSeconds, totalSecs))
     setActualUsedSeconds(contextUsedSeconds)
   }, [currentPlan, contextUsedSeconds])
 
-  // Get plan details
-  const plan = pricingPlans.find((p) => p.tier === selectedPlan) || pricingPlans[0]
+  // Plan details
+  const plan = getPlanDetails(selectedPlan)
   const monthlyMinutes = plan.audioMinutes
   const monthlySeconds = monthlyMinutes * 60
-
-  // Calculate accumulated time
   const totalMinutes = monthlyMinutes * accumulatedMonths
   const totalSeconds = totalMinutes * 60
 
   // Recalculate usage percentage when accumulated months changes
   useEffect(() => {
     if (accumulatedMonths > 0 && totalSeconds > 0) {
-      // Keep the actual used seconds the same, but recalculate the percentage
-      const newPercentage = Math.min(Math.round((actualUsedSeconds / totalSeconds) * 100), 100)
-      setUsagePercentage(newPercentage)
+      setUsagePercentage(calcUsagePercentage(actualUsedSeconds, totalSeconds))
     }
   }, [accumulatedMonths, totalSeconds, actualUsedSeconds])
 
-  // Calculate remaining seconds based on actual used seconds
+  // Calculate remaining seconds
   const remainingSeconds = totalSeconds - actualUsedSeconds
-
-  // Get the current plan from context for comparison
-  const contextPlan = pricingPlans.find((p) => p.tier === currentPlan) || pricingPlans[0]
+  const contextPlan = getPlanDetails(currentPlan)
 
   // Handle plan change
   const handlePlanChange = (plan: PlanTier) => {
     setSelectedPlan(plan)
-
-    // Reset accumulated months when changing plans
     setAccumulatedMonths(1)
-
-    // Set a default usage percentage based on the plan tier
-    let defaultPercentage = 70 // Default for most plans
-
-    if (plan === "Free" || plan === "Starter") {
-      defaultPercentage = 85 // Higher usage for free/starter plans
-    } else if (plan === "Company") {
-      defaultPercentage = 40 // Lower usage for company plan
-    }
-
+    const defaultPercentage = getDefaultUsagePercentage(plan)
     setUsagePercentage(defaultPercentage)
-
-    // Calculate new used seconds based on the new plan and percentage
-    const newPlanDetails = pricingPlans.find((p) => p.tier === plan) || pricingPlans[0]
+    const newPlanDetails = getPlanDetails(plan)
     const newMonthlySeconds = newPlanDetails.audioMinutes * 60
-    const newUsedSeconds = Math.round((newMonthlySeconds * defaultPercentage) / 100)
-    setActualUsedSeconds(newUsedSeconds)
-
-    // Check if this is a downgrade from the context plan
-    const newIsDowngrade =
-      pricingPlans.findIndex((p) => p.tier === plan) < pricingPlans.findIndex((p) => p.tier === currentPlan)
-    setShowDowngradePreview(newIsDowngrade)
+    setActualUsedSeconds(calcUsedSecondsFromPercentage(newMonthlySeconds, defaultPercentage))
+    setShowDowngradePreview(isDowngrade(plan, currentPlan))
   }
 
   // Handle usage percentage change
   const handleUsagePercentageChange = (newPercentage: number) => {
     setUsagePercentage(newPercentage)
-    // Update actual used seconds when percentage changes
-    const newUsedSeconds = Math.round((totalSeconds * newPercentage) / 100)
-    setActualUsedSeconds(newUsedSeconds)
+    setActualUsedSeconds(calcUsedSecondsFromPercentage(totalSeconds, newPercentage))
   }
 
   // Apply changes to the global state
   const applyChanges = () => {
-    // Calculate the monthly usage (not accumulated)
-    // We need to convert back to a monthly percentage for the global state
-    const monthlyUsedPercentage = Math.min(Math.round((actualUsedSeconds / monthlySeconds) * 100), 100)
-    const monthlyUsedSeconds = Math.round((monthlySeconds * monthlyUsedPercentage) / 100)
-
-    // Update the global state with the selected plan and calculated used seconds
+    const monthlyUsedPercentage = calcUsagePercentage(actualUsedSeconds, monthlySeconds)
+    const monthlyUsedSeconds = calcUsedSecondsFromPercentage(monthlySeconds, monthlyUsedPercentage)
     updatePlanAndUsage(selectedPlan, monthlyUsedSeconds)
-
-    console.log(
-      `Applied changes: Plan=${selectedPlan}, UsedSeconds=${monthlyUsedSeconds}, AccumulatedMonths=${accumulatedMonths}`,
-    )
+    // Optionally show toast here
   }
 
   // Reset to the current values from context
   const resetToDefaults = () => {
     setSelectedPlan(currentPlan)
     setAccumulatedMonths(1)
-    // Calculate the current usage percentage based on contextUsedSeconds
-    const plan = pricingPlans.find((p) => p.tier === currentPlan) || pricingPlans[0]
+    const plan = getPlanDetails(currentPlan)
     const totalSecs = plan.audioMinutes * 60
-    const percentage = Math.round((contextUsedSeconds / totalSecs) * 100)
-    setUsagePercentage(percentage)
+    setUsagePercentage(calcUsagePercentage(contextUsedSeconds, totalSecs))
     setActualUsedSeconds(contextUsedSeconds)
   }
 
-  // Get status message
   const statusMessage = getUsageStatusMessage(usagePercentage, remainingSeconds, selectedPlan)
 
   return (
@@ -214,9 +151,7 @@ export default function PlanPreviewPanel() {
                           id="signup-date"
                           type="date"
                           value={signupDate}
-                          onChange={(e) => {
-                            setSignupDate(e.target.value)
-                          }}
+                          onChange={(e) => setSignupDate(e.target.value)}
                           className="h-7 text-xs mt-1"
                         />
                         <p className="text-xs text-muted-foreground mt-1">User joined {formatTimeSince(signupDate)}</p>
@@ -249,7 +184,6 @@ export default function PlanPreviewPanel() {
                     className="mt-2"
                   />
                 </div>
-
                 <div>
                   <Label htmlFor="accumulated-months">Accumulated Months</Label>
                   <div className="flex items-center gap-2 mt-2">
@@ -259,15 +193,11 @@ export default function PlanPreviewPanel() {
                       min="1"
                       max="12"
                       value={accumulatedMonths}
-                      onChange={(e) =>
-                        setAccumulatedMonths(Math.max(1, Math.min(12, Number.parseInt(e.target.value) || 1)))
-                      }
+                      onChange={(e) => setAccumulatedMonths(Math.max(1, Math.min(12, Number.parseInt(e.target.value) || 1)))}
                       className="w-20"
                     />
                     <span className="text-sm text-muted-foreground">
-                      {accumulatedMonths > 1
-                        ? `${accumulatedMonths} months of accumulated time`
-                        : "No accumulated time"}
+                      {accumulatedMonths > 1 ? `${accumulatedMonths} months of accumulated time` : "No accumulated time"}
                     </span>
                   </div>
                 </div>
@@ -282,11 +212,10 @@ export default function PlanPreviewPanel() {
                       <h4 className="text-sm font-medium text-amber-500 mb-1">Plan Downgrade Preview</h4>
                       <p className="text-xs text-muted-foreground">
                         When downgrading from {currentPlan} to {selectedPlan}, you'll keep your accumulated time, but
-                        from <span className="font-medium">{formatDateForDisplay(effectiveDate)}</span> you'll receive{" "}
-                        <span className="font-medium">{formatAudioTime(monthlyMinutes)}/month</span> instead of{" "}
+                        from <span className="font-medium">{formatDateForDisplay(effectiveDate)}</span> you'll receive {" "}
+                        <span className="font-medium">{formatAudioTime(monthlyMinutes)}/month</span> instead of {" "}
                         <span className="font-medium">{formatAudioTime(contextPlan.audioMinutes)}/month</span>.
                       </p>
-
                       <div className="mt-2 flex items-center gap-2">
                         <Label htmlFor="effective-date" className="text-xs">
                           Effective Date:
@@ -295,9 +224,7 @@ export default function PlanPreviewPanel() {
                           id="effective-date"
                           type="date"
                           value={effectiveDate}
-                          onChange={(e) => {
-                            setEffectiveDate(e.target.value)
-                          }}
+                          onChange={(e) => setEffectiveDate(e.target.value)}
                           className="h-7 text-xs w-auto"
                         />
                       </div>
@@ -342,10 +269,9 @@ export default function PlanPreviewPanel() {
                   ) : (
                     <ArrowUpRight className="h-3 w-3" />
                   )}
-
                   {statusMessage.hasLink ? (
                     <p>
-                      If you need more time, please{" "}
+                      If you need more time, please {" "}
                       <a
                         href="mailto:talktome@daisys.ai"
                         className="text-blue-600 underline hover:text-blue-800"
@@ -364,65 +290,19 @@ export default function PlanPreviewPanel() {
               )}
             </div>
 
-            {/* Redesigned Preview Summary */}
-            <div className="grid grid-cols-3 gap-3 mt-2 mb-4">
-              <div className="bg-muted/30 p-3 rounded-md flex flex-col">
-                <div className="flex items-center gap-1.5 mb-1.5 text-sm font-medium text-primary">
-                  <Clock className="h-4 w-4" />
-                  <span>Plan Details</span>
-                </div>
-                <div className="text-sm">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-muted-foreground">Plan:</span>
-                    <span className="font-medium">{selectedPlan}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Monthly:</span>
-                    <span>{formatAudioTime(monthlyMinutes)}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-muted/30 p-3 rounded-md flex flex-col">
-                <div className="flex items-center gap-1.5 mb-1.5 text-sm font-medium text-amber-500">
-                  <Calendar className="h-4 w-4" />
-                  <span>Accumulation</span>
-                </div>
-                <div className="text-sm">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-muted-foreground">Months:</span>
-                    <span>{accumulatedMonths}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Total:</span>
-                    <span>{formatAudioTime(totalMinutes)}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-muted/30 p-3 rounded-md flex flex-col">
-                <div className="flex items-center gap-1.5 mb-1.5 text-sm font-medium text-green-500">
-                  <BarChart3 className="h-4 w-4" />
-                  <span>Usage</span>
-                </div>
-                <div className="text-sm">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-muted-foreground">Used:</span>
-                    <span>{formatTimeCompact(actualUsedSeconds)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Remaining:</span>
-                    <span className={getUsageTextColorClass(usagePercentage, remainingSeconds)}>
-                      {formatTimeCompact(remainingSeconds)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Summary Cards (refactored) */}
+            <PlanSummaryCards
+              selectedPlan={selectedPlan}
+              monthlyMinutes={monthlyMinutes}
+              accumulatedMonths={accumulatedMonths}
+              totalMinutes={totalMinutes}
+              actualUsedSeconds={actualUsedSeconds}
+              remainingSeconds={remainingSeconds}
+              usagePercentage={usagePercentage}
+            />
 
             <div className="border-t pt-4">
               <h3 className="text-sm font-medium mb-4">Preview</h3>
-
               <div className="flex flex-col gap-4">
                 <div>
                   <h4 className="text-xs text-muted-foreground mb-2">AudioTimeDisplay Component:</h4>
@@ -430,7 +310,6 @@ export default function PlanPreviewPanel() {
                     <AudioTimeDisplay usedSeconds={actualUsedSeconds} tier={selectedPlan} />
                   </div>
                 </div>
-
                 <div>
                   <h4 className="text-xs text-muted-foreground mb-2">In Navbar Context:</h4>
                   <div className="flex items-center justify-between p-4 bg-background border-b border-border">
@@ -439,7 +318,6 @@ export default function PlanPreviewPanel() {
                       <div className="text-muted-foreground">/</div>
                       <span className="font-medium">Project Name</span>
                     </div>
-
                     <div className="flex items-center space-x-4">
                       <AudioTimeDisplay usedSeconds={actualUsedSeconds} tier={selectedPlan} />
                       <div className="w-8 h-8 bg-secondary rounded-full"></div>
@@ -449,7 +327,6 @@ export default function PlanPreviewPanel() {
               </div>
             </div>
           </Tabs>
-
           <div className="flex justify-between mt-4 gap-2">
             <Button variant="outline" size="sm" onClick={resetToDefaults}>
               Reset to Defaults
@@ -465,55 +342,7 @@ export default function PlanPreviewPanel() {
           </div>
         </CardContent>
       </Card>
-
       <FixedPlanPreviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   )
-}
-
-// Helper function to format a date string for display
-function formatDateForDisplay(dateString: string): string {
-  try {
-    const date = new Date(dateString)
-    return date.toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })
-  } catch (error) {
-    console.error("Error formatting date:", error)
-    return dateString
-  }
-}
-
-// Helper function to format time since a given date in a user-friendly way
-function formatTimeSince(dateString: string): string {
-  try {
-    const date = new Date(dateString)
-    const today = new Date()
-
-    if (isNaN(date.getTime())) {
-      return "recently"
-    }
-
-    const diffTime = Math.abs(today.getTime() - date.getTime())
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
-
-    if (diffDays < 1) {
-      return "today"
-    } else if (diffDays === 1) {
-      return "yesterday"
-    } else if (diffDays < 7) {
-      return `${diffDays} days ago`
-    } else if (diffDays < 30) {
-      const diffWeeks = Math.floor(diffDays / 7)
-      return `${diffWeeks} ${diffWeeks === 1 ? "week" : "weeks"} ago`
-    } else {
-      const monthDiff = today.getMonth() - date.getMonth() + 12 * (today.getFullYear() - date.getFullYear())
-      return `${monthDiff} ${monthDiff === 1 ? "month" : "months"} ago`
-    }
-  } catch (error) {
-    console.error("Error calculating time since:", error)
-    return "recently"
-  }
 }
