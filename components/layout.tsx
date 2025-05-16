@@ -37,6 +37,22 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
   // For debugging - track state changes
   const [stateVersion, setStateVersion] = useState(0)
 
+  // Audio files state for demo
+  const [audioFiles, setAudioFiles] = useState<{ id: string; name: string; duration: string; date: string }[]>([])
+
+  const addAudioFile = (name: string) => {
+    const now = new Date()
+    setAudioFiles(prev => [
+      {
+        id: uuidv4(),
+        name,
+        duration: "0:00",
+        date: `Today, ${now.getHours()}:${now.getMinutes().toString().padStart(2, "0")}`,
+      },
+      ...prev,
+    ])
+  }
+
   // Initialize sample chats
   useEffect(() => {
     console.log("[Layout] Initializing sample chats")
@@ -378,6 +394,8 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
                 onChatStarted={handleChatStarted}
                 onChatUpdated={handleChatUpdated}
                 onNewChat={shouldResetChat ? handleNewChat : undefined}
+                onTitleChange={setCurrentChatName}
+                addAudioFile={addAudioFile}
               />
             </div>
 
@@ -392,7 +410,7 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
               className="overflow-hidden transition-width duration-100 ease-out"
               style={{ width: `${100 - chatWidth}%` }}
             >
-              <GUISection />
+              <GUISection audioFiles={audioFiles} addAudioFile={addAudioFile} />
             </div>
           </div>
         </div>

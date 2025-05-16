@@ -11,9 +11,11 @@ interface ChatSectionProps {
   onChatStarted?: (firstMessage: string) => void
   onChatUpdated?: (chatId: string, messages: any[]) => void
   onNewChat?: () => void
+  onTitleChange?: (title: string) => void
+  addAudioFile?: (name: string) => void
 }
 
-export default function ChatSection({ activeChat, onChatStarted, onChatUpdated, onNewChat }: ChatSectionProps) {
+export default function ChatSection({ activeChat, onChatStarted, onChatUpdated, onNewChat, onTitleChange, addAudioFile }: ChatSectionProps) {
   const [activeScript, setActiveScript] = useState<VoiceScript | null>(null)
 
   // Load script when activeChat changes
@@ -92,9 +94,9 @@ export default function ChatSection({ activeChat, onChatStarted, onChatUpdated, 
   return (
     <div className="flex flex-col h-full">
       {activeScript ? (
-        <ScriptEditor script={activeScript} onSave={handleScriptSave} />
+        <ScriptEditor script={activeScript} onSave={handleScriptSave} onTitleChange={onTitleChange} addAudioFile={addAudioFile} />
       ) : (
-        <ScriptWelcome onScriptCreate={handleScriptCreate} />
+        <ScriptWelcome onScriptCreate={handleScriptCreate} addAudioFile={addAudioFile} />
       )}
     </div>
   )

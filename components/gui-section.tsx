@@ -1,49 +1,35 @@
 "use client"
 
 import { useState } from "react"
-import { Play, Pause, Download, Mic, ChevronUp, ChevronDown, Check } from "lucide-react"
+import { Play, Pause, Download, Mic, ChevronUp, ChevronDown, Check, ChevronRight, ChevronDown as ChevronDownIcon, RotateCcw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import ResizableDivider from "./ui/resizable-divider"
 
-export default function GUISection() {
+interface AudioFile {
+  id: string
+  name: string
+  duration: string
+  date: string
+}
+
+interface GUISectionProps {
+  audioFiles: AudioFile[]
+  addAudioFile: (name: string) => void
+}
+
+export default function GUISection({ audioFiles, addAudioFile }: GUISectionProps) {
   const [audioSectionHeight, setAudioSectionHeight] = useState(70) // 70% default height for audio section
-  const [isPlaying, setIsPlaying] = useState<number | null>(null)
+  const [isPlaying, setIsPlaying] = useState<string | null>(null)
   const [expandedSection, setExpandedSection] = useState<"audio" | "voice" | null>(null)
-
-  // Make audio files dynamic
-  const [audioFiles, setAudioFiles] = useState([
-    { id: 1, name: "Audio 1", duration: "0:32", date: "Today, 12:05 PM" },
-    { id: 2, name: "Audio 2", duration: "1:15", date: "Today, 11:58 AM" },
-    { id: 3, name: "Audio 3", duration: "0:45", date: "Today, 11:45 AM" },
-    { id: 4, name: "Audio 4", duration: "2:03", date: "Today, 11:30 AM" },
-    { id: 5, name: "Audio 5", duration: "0:58", date: "Today, 11:22 AM" },
-    { id: 6, name: "Audio 6", duration: "1:47", date: "Today, 11:15 AM" },
-    { id: 7, name: "Audio 7", duration: "0:36", date: "Today, 11:08 AM" },
-    { id: 8, name: "Audio 8", duration: "1:24", date: "Today, 11:01 AM" },
-    { id: 9, name: "Audio 9", duration: "0:52", date: "Today, 10:55 AM" },
-  ])
-
-  // Function to add a new audio file
-  const addAudioFile = (name: string) => {
-    const now = new Date()
-    const date = now.toLocaleString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false, month: "short", day: "numeric" })
-    setAudioFiles(prev => [
-      {
-        id: prev.length ? prev[0].id + 1 : 1,
-        name,
-        duration: "0:00",
-        date: `Today, ${now.getHours()}:${now.getMinutes().toString().padStart(2, "0")}`,
-      },
-      ...prev,
-    ])
-  }
+  const [expandedAudio, setExpandedAudio] = useState<string | null>(null)
+  const [audioProgress, setAudioProgress] = useState<{ [id: string]: number }>({})
 
   const handleResize = (newHeight: number) => {
     setAudioSectionHeight(newHeight)
   }
 
-  const togglePlay = (id: number) => {
+  const togglePlay = (id: string) => {
     if (isPlaying === id) {
       setIsPlaying(null)
     } else {
@@ -80,7 +66,7 @@ export default function GUISection() {
         <div className="flex items-center justify-between px-6 py-3 border-b border-border/10">
           <div className="flex items-center gap-2">
             <h2 className="font-semibold text-lg text-foreground">Audio Generation</h2>
-            <span className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground">9 files</span>
+            <span className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground">{audioFiles.length} {audioFiles.length === 1 ? 'file' : 'files'}</span>
           </div>
           <Button
             variant="ghost"
@@ -93,44 +79,97 @@ export default function GUISection() {
         </div>
 
         <div className="flex-1 p-4 overflow-y-auto">
-          <div className="space-y-2">
-            {audioFiles.map((file) => (
-              <div
-                key={file.id}
-                className="flex items-center px-4 py-3 rounded-lg border border-border hover:border-accent transition-colors bg-card"
-              >
-                <div className="flex-shrink-0 mr-3">
-                  <div className="h-6 w-6 rounded-full bg-muted flex items-center justify-center">
-                    <Check className="h-3.5 w-3.5 text-muted-foreground" />
-                  </div>
-                </div>
-
-                <div className="flex-grow min-w-0">
-                  <div className="flex items-center">
-                    <span className="text-foreground font-medium truncate">{file.name}</span>
-                    <span className="ml-2 text-xs text-muted-foreground">{file.duration}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 ml-auto">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
-                    onClick={() => togglePlay(file.id)}
+          {audioFiles.length === 0 ? (
+            <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground py-12">
+              <div className="text-4xl mb-4">🔊</div>
+              <div className="text-lg font-semibold mb-2">No audio files yet</div>
+              <div className="text-base">Once you have a script, click <span className='font-bold'>Generate</span> in the script editor and your audio files will show up here.</div>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {audioFiles.map((file, idx) => {
+                const isExpanded = expandedAudio === file.id
+                const isFilePlaying = isPlaying === file.id
+                const versionNumber = `Version ${audioFiles.length - idx}`
+                return (
+                  <div
+                    key={file.id}
+                    className="flex flex-col px-4 py-3 rounded-lg border border-border hover:border-accent transition-colors bg-card"
                   >
-                    {isPlaying === file.id ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                  </Button>
-
-                  <span className="text-xs text-muted-foreground">{file.date}</span>
-
-                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground">
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+                    <div className="flex items-center w-full">
+                      {/* Expand/Collapse Arrow */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8 p-0 mr-2 text-muted-foreground hover:text-foreground"
+                        onClick={() => setExpandedAudio(isExpanded ? null : file.id)}
+                        aria-label={isExpanded ? 'Collapse details' : 'Expand details'}
+                      >
+                        {isExpanded ? <ChevronDownIcon className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
+                      </Button>
+                      {/* Version Number */}
+                      <span className="font-semibold text-base mr-4 min-w-[90px]">{versionNumber}</span>
+                      {/* File Name & Duration */}
+                      <span className="text-foreground font-medium truncate flex-1">{file.name}</span>
+                      <span className="ml-2 text-xs text-muted-foreground min-w-[48px] text-right">{file.duration}</span>
+                      {/* Restore Button */}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="ml-4 px-3 py-1 h-8 text-xs font-medium border-border"
+                        disabled
+                      >
+                        <RotateCcw className="h-4 w-4 mr-1" />Restore
+                      </Button>
+                      {/* Play Button */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8 p-0 ml-2 text-muted-foreground hover:text-foreground"
+                        onClick={() => togglePlay(file.id)}
+                        aria-label={isFilePlaying ? 'Pause' : 'Play'}
+                      >
+                        {isFilePlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                      </Button>
+                      {/* Download Button */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8 p-0 ml-2 text-muted-foreground hover:text-foreground"
+                        aria-label="Download"
+                      >
+                        <Download className="h-5 w-5" />
+                      </Button>
+                    </div>
+                    {/* Audio Slider (when playing) */}
+                    {isFilePlaying && (
+                      <div className="w-full flex items-center mt-2 mb-1 px-2">
+                        <input
+                          type="range"
+                          min={0}
+                          max={100}
+                          value={audioProgress[file.id] || 0}
+                          onChange={e => setAudioProgress({ ...audioProgress, [file.id]: Number(e.target.value) })}
+                          className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+                        />
+                        <span className="ml-2 text-xs text-muted-foreground">{audioProgress[file.id] || 0}%</span>
+                      </div>
+                    )}
+                    {/* Expanded Details */}
+                    {isExpanded && (
+                      <div className="mt-2 mb-1 px-2">
+                        <div className="text-xs font-semibold mb-1 text-muted-foreground">Generation steps:</div>
+                        <ul className="list-disc pl-5 text-sm text-foreground space-y-1">
+                          <li>emphasize 'the great grandmother'</li>
+                          <li>longer break after first sentence</li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
       </div>
 
@@ -170,44 +209,26 @@ export default function GUISection() {
         </div>
 
         <div className="flex-1 p-4 overflow-y-auto">
-          <div className="bg-card rounded-lg p-4 border border-border">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center">
-                <Mic className="h-6 w-6 text-muted-foreground" />
+          <div className="flex flex-col items-center justify-center text-center text-muted-foreground py-12">
+            <div className="text-4xl mb-2">🗣️</div>
+            <div className="text-lg font-semibold mb-1">No voices created yet</div>
+            <div className="text-base mb-2">Use the chat below to describe the voice you want to create.</div>
+            {/* Chat UI placeholder, only show when expanded */}
+            {expandedSection === "voice" && (
+              <div className="mt-8 w-full max-w-md mx-auto border-t border-border pt-4">
+                <div className="mb-2 text-sm text-muted-foreground font-medium">Describe the voice you want to create:</div>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    className="flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="e.g. Deep, warm, British accent..."
+                    disabled
+                  />
+                  <Button className="bg-primary text-white" disabled>Send</Button>
+                </div>
+                <div className="mt-2 text-xs text-muted-foreground">(Chat coming soon!)</div>
               </div>
-              <div>
-                <h3 className="font-medium text-foreground">Default Voice</h3>
-                <p className="text-sm text-muted-foreground">Natural sounding voice with neutral accent</p>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <div>
-                <label className="text-xs text-muted-foreground block mb-1">Pitch</label>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  defaultValue="50"
-                  className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
-                />
-              </div>
-
-              <div>
-                <label className="text-xs text-muted-foreground block mb-1">Speed</label>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  defaultValue="50"
-                  className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
-                />
-              </div>
-
-              <div className="pt-2">
-                <Button className="w-full bg-muted hover:bg-accent text-foreground">Generate Audio</Button>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
