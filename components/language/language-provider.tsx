@@ -62,7 +62,7 @@ const translations: Record<Language, Record<string, string>> = {
     tryDifferentSearch: "Try a different search term or clear the search",
     searchSessions: "Search sessions...",
     noSessions: "No sessions found",
-    tryDifferentSearch: "Try a different search term or create a new session",
+    tryDifferentSessionSearch: "Try a different search term or create a new session",
   },
   nl: {
     settings: "Instellingen",
@@ -98,6 +98,7 @@ const translations: Record<Language, Record<string, string>> = {
     clearSearch: "Zoekopdracht wissen",
     noResults: "Geen resultaten gevonden",
     tryDifferentSearch: "Probeer een andere zoekterm of wis de zoekopdracht",
+    tryDifferentSessionSearch: "Probeer een andere zoekterm of maak een nieuwe sessie aan",
   },
 }
 
