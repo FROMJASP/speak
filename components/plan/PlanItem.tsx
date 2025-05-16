@@ -39,7 +39,7 @@ export function PlanItem({
   return (
     <div
       className={`flex items-center justify-between py-2 px-2 rounded-sm mb-1 ${
-        isCurrentPlan ? "bg-[#27272a]" : "cursor-pointer hover:bg-[#27272a] hover:text-accent-foreground"
+        isCurrentPlan ? "bg-muted" : "cursor-pointer hover:bg-muted hover:text-accent-foreground"
       }`}
       onClick={isCurrentPlan ? undefined : onClick}
       onMouseEnter={isCurrentPlan ? undefined : onMouseEnter}

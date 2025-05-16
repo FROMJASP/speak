@@ -11,6 +11,7 @@ import FeedbackModal from "./feedback-modal"
 import { usePlan } from "./admin/plan-context"
 import { useUser } from "@/contexts/user-context"
 import { createPortal } from "react-dom"
+import ThemeSwitcher from "./theme-switcher"
 
 interface UserDropdownProps {
   avatarUrl?: string
@@ -134,7 +135,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
           createPortal(
             <div
               ref={menuRef}
-              className="fixed z-50 w-56 overflow-hidden rounded-lg border border-border bg-[#1a1a1a] shadow-md animate-in fade-in-0 zoom-in-95"
+              className="fixed z-50 w-56 overflow-hidden rounded-lg border border-border bg-popover shadow-md animate-in fade-in-0 zoom-in-95"
               style={{ top: `${position.top}px`, right: `${position.right}px` }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -213,23 +214,13 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
               {/* Theme Option with Switcher */}
               <div className="px-2 py-1 flex items-center justify-between">
                 <span className="text-[13px]">{t("theme")}</span>
-                <div className="flex gap-1 bg-[#2a2a2a] p-0.5 rounded-full">
-                  <button className="p-1 rounded-full bg-[#1a1a1a]">
-                    <Laptop className="h-3.5 w-3.5" />
-                  </button>
-                  <button className="p-1 rounded-full">
-                    <Sun className="h-3.5 w-3.5" />
-                  </button>
-                  <button className="p-1 rounded-full">
-                    <Moon className="h-3.5 w-3.5" />
-                  </button>
-                </div>
+                <ThemeSwitcher size="sm" />
               </div>
 
               {/* Language Selector */}
               <div className="px-2 py-1 flex items-center justify-between">
                 <span className="text-[13px]">{t("language")}</span>
-                <div className="bg-[#2a2a2a] px-2 py-1 rounded-md flex items-center">
+                <div className="bg-muted px-2 py-1 rounded-md flex items-center">
                   <span className="text-xs mr-1">English</span>
                   <svg width="10" height="10" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path

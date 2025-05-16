@@ -20,7 +20,7 @@ export function BetaDealTooltip({ isVisible, position }: BetaDealTooltipProps) {
 
   return createPortal(
     <div
-      className={`fixed z-[100] w-56 px-3 py-2 bg-black border border-border rounded-md text-xs transition-opacity duration-200 ${
+      className={`fixed z-[100] w-56 px-3 py-2 bg-popover dark:bg-black border border-border rounded-md text-xs transition-opacity duration-200 ${
         isVisible ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
       }`}
       style={{
@@ -37,7 +37,7 @@ export function BetaDealTooltip({ isVisible, position }: BetaDealTooltipProps) {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-muted-foreground">Beta price:</span>
-          <span className="text-white font-medium">€50/month</span>
+          <span className="text-foreground font-medium">€50/month</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-muted-foreground">You save:</span>

@@ -269,7 +269,7 @@ export function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "de
           open={isDropdownOpen}
           onOpenChange={setIsDropdownOpen}
           align="end"
-          contentClassName="w-72 p-0 bg-[#1a1a1a] border border-border"
+          contentClassName="w-72 p-0 bg-popover border border-border"
           fixedPosition={hasCalculatedPosition ? dropdownPosition : undefined}
           trigger={
             <div className="flex items-center rounded-md overflow-hidden hover:bg-secondary/30 transition-colors cursor-pointer group relative">

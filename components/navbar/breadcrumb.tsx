@@ -3,7 +3,7 @@
 import { PlusCircle } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
-import ChatName from "./chat-name"
+import ChatName from "./rename-script"
 
 type PlanTier = "free" | "pro" | "enterprise"
 

@@ -24,30 +24,49 @@ const initialState: ThemeProviderState = {
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const root = window.document.documentElement
-
-    root.classList.remove("light", "dark")
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-      root.classList.add(systemTheme)
-      return
+    // On mount, read from localStorage if available
+    const storedTheme = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
+    let htmlClass = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : document.documentElement.classList.contains("light")
+      ? "light"
+      : defaultTheme;
+    if (storedTheme === "dark" || storedTheme === "light" || storedTheme === "system") {
+      htmlClass = storedTheme;
     }
+    setTheme(htmlClass as Theme);
+    setMounted(true);
+  }, [defaultTheme]);
 
-    root.classList.add(theme)
-  }, [theme])
+  useEffect(() => {
+    if (!mounted) return;
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    if (theme === "system") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      root.classList.add(systemTheme);
+      localStorage.setItem('theme', 'system');
+      return;
+    }
+    root.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }, [theme, mounted]);
 
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      setTheme(theme)
+      setTheme(theme);
+      // localStorage is updated in the effect above
     },
-  }
+  };
 
-  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>
+  if (!mounted) return null;
+
+  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>;
 }
 
 export const useTheme = () => {

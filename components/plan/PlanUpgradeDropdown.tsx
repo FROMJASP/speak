@@ -212,7 +212,7 @@ export function PlanUpgradeDropdown({
         >
           <Button
             variant="outline"
-            className="w-full mb-3 bg-[#f5f5f4] text-black hover:bg-[#e7e5e4] hover:text-black"
+            className="w-full mb-3 bg-background text-foreground hover:bg-muted hover:text-foreground"
             onClick={onUpgradeClick}
           >
             {getButtonText()}

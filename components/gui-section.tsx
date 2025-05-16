@@ -47,7 +47,7 @@ export default function GUISection() {
   }
 
   return (
-    <div className="h-full flex flex-col bg-[#111] rounded-xl border border-border/20 overflow-hidden">
+    <div className="h-full flex flex-col bg-background rounded-xl border border-border overflow-hidden">
       {/* Audio Generation Display */}
       <div
         className={cn(
@@ -64,8 +64,8 @@ export default function GUISection() {
       >
         <div className="flex items-center justify-between px-6 py-3 border-b border-border/10">
           <div className="flex items-center gap-2">
-            <h2 className="font-semibold text-lg text-white">Audio Generation</h2>
-            <span className="text-xs bg-gray-800 px-2 py-0.5 rounded text-gray-400">9 files</span>
+            <h2 className="font-semibold text-lg text-foreground">Audio Generation</h2>
+            <span className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground">9 files</span>
           </div>
           <Button
             variant="ghost"
@@ -82,18 +82,18 @@ export default function GUISection() {
             {audioFiles.map((file) => (
               <div
                 key={file.id}
-                className="flex items-center px-4 py-3 rounded-lg border border-gray-800/50 hover:border-gray-700/50 transition-colors bg-[#1a1a1a]"
+                className="flex items-center px-4 py-3 rounded-lg border border-border hover:border-accent transition-colors bg-card"
               >
                 <div className="flex-shrink-0 mr-3">
-                  <div className="h-6 w-6 rounded-full bg-gray-800 flex items-center justify-center">
-                    <Check className="h-3.5 w-3.5 text-gray-400" />
+                  <div className="h-6 w-6 rounded-full bg-muted flex items-center justify-center">
+                    <Check className="h-3.5 w-3.5 text-muted-foreground" />
                   </div>
                 </div>
 
                 <div className="flex-grow min-w-0">
                   <div className="flex items-center">
-                    <span className="text-gray-300 font-medium truncate">{file.name}</span>
-                    <span className="ml-2 text-xs text-gray-500">{file.duration}</span>
+                    <span className="text-foreground font-medium truncate">{file.name}</span>
+                    <span className="ml-2 text-xs text-muted-foreground">{file.duration}</span>
                   </div>
                 </div>
 
@@ -101,15 +101,15 @@ export default function GUISection() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="h-8 w-8 p-0 text-gray-400 hover:text-white"
+                    className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
                     onClick={() => togglePlay(file.id)}
                   >
                     {isPlaying === file.id ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                   </Button>
 
-                  <span className="text-xs text-gray-500">{file.date}</span>
+                  <span className="text-xs text-muted-foreground">{file.date}</span>
 
-                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0 text-gray-400 hover:text-white">
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground">
                     <Download className="h-4 w-4" />
                   </Button>
                 </div>
@@ -143,7 +143,7 @@ export default function GUISection() {
         }}
       >
         <div className="flex items-center justify-between px-6 py-3 border-b border-border/10">
-          <h2 className="font-semibold text-lg text-white">Voice Creator</h2>
+          <h2 className="font-semibold text-lg text-foreground">Voice Creator</h2>
           <Button
             variant="ghost"
             size="sm"
@@ -155,42 +155,42 @@ export default function GUISection() {
         </div>
 
         <div className="flex-1 p-4 overflow-y-auto">
-          <div className="bg-[#1a1a1a] rounded-lg p-4 border border-gray-800/50">
+          <div className="bg-card rounded-lg p-4 border border-border">
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 rounded-full bg-gray-800 flex items-center justify-center">
-                <Mic className="h-6 w-6 text-gray-300" />
+              <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center">
+                <Mic className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
-                <h3 className="font-medium text-white">Default Voice</h3>
-                <p className="text-sm text-gray-400">Natural sounding voice with neutral accent</p>
+                <h3 className="font-medium text-foreground">Default Voice</h3>
+                <p className="text-sm text-muted-foreground">Natural sounding voice with neutral accent</p>
               </div>
             </div>
 
             <div className="space-y-3">
               <div>
-                <label className="text-xs text-gray-500 block mb-1">Pitch</label>
+                <label className="text-xs text-muted-foreground block mb-1">Pitch</label>
                 <input
                   type="range"
                   min="0"
                   max="100"
                   defaultValue="50"
-                  className="w-full h-1.5 bg-gray-700 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-300"
+                  className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
                 />
               </div>
 
               <div>
-                <label className="text-xs text-gray-500 block mb-1">Speed</label>
+                <label className="text-xs text-muted-foreground block mb-1">Speed</label>
                 <input
                   type="range"
                   min="0"
                   max="100"
                   defaultValue="50"
-                  className="w-full h-1.5 bg-gray-700 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-300"
+                  className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
                 />
               </div>
 
               <div className="pt-2">
-                <Button className="w-full bg-gray-800 hover:bg-gray-700 text-white">Generate Audio</Button>
+                <Button className="w-full bg-muted hover:bg-accent text-foreground">Generate Audio</Button>
               </div>
             </div>
           </div>

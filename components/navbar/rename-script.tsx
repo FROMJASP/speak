@@ -38,13 +38,13 @@ export default function ChatName({ name, chatId, onRename }: ChatNameProps) {
               className="h-8 px-2 text-sm font-normal hover:bg-transparent"
               onClick={handleOpenDialog}
             >
-              <span className="max-w-[200px] truncate">{name || "Untitled Session"}</span>
+              <span className="max-w-[200px] truncate">{name || "Untitled Script"}</span>
             </Button>
           </TooltipTrigger>
           <TooltipContent>
             <div className="flex items-center gap-1">
               <Pencil className="h-3 w-3" />
-              <span>Rename session</span>
+              <span>Rename script</span>
             </div>
           </TooltipContent>
         </Tooltip>

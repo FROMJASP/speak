@@ -37,18 +37,18 @@ export default function RenameChatDialog({ chatId, currentName, isOpen, onClose,
   }
 
   return (
-    <BaseModal isOpen={isOpen} onClose={onClose} title="Rename Session" className="max-w-sm">
+    <BaseModal isOpen={isOpen} onClose={onClose} title="Rename Script" className="max-w-sm">
       <form onSubmit={handleSubmit} className="p-4 space-y-4">
         <div className="space-y-2">
-          <label htmlFor="chat-name" className="text-sm font-medium">
-            Session Name
+          <label htmlFor="script-name" className="text-sm font-medium">
+            Script Name
           </label>
           <Input
-            id="chat-name"
+            id="script-name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter session name"
-            autoFocus
+            placeholder="Enter script name"
+            autoFocus={true}      
           />
         </div>
 

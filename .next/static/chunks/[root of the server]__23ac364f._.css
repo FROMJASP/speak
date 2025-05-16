@@ -424,8 +424,8 @@ img, video {
   --radius: .5rem;
 }
 
-.dark {
-  --background: 240 10% 3.9%;
+:root.dark {
+  --background: 240 6% 7%;
   --foreground: 0 0% 98%;
   --card: 240 10% 3.9%;
   --card-foreground: 0 0% 98%;
@@ -1905,10 +1905,6 @@ body {
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
 }
 
-.border-gray-800\/50 {
-  border-color: #1f293780;
-}
-
 .border-green-200 {
   --tw-border-opacity: 1;
   border-color: rgb(187 247 208 / var(--tw-border-opacity, 1));
@@ -1960,11 +1956,6 @@ body {
   border-top-color: #0000;
 }
 
-.bg-\[\#111\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#1a1a1a\] {
   --tw-bg-opacity: 1;
   background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
@@ -1973,11 +1964,6 @@ body {
 .bg-\[\#27272a\] {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#2a2a2a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(42 42 42 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#f5f5f0\] {
@@ -2738,11 +2724,6 @@ body {
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-}
-
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity, 1));
@@ -2931,11 +2912,6 @@ body {
 
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
-}
-
-.blur {
-  --tw-blur: blur(8px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter {
@@ -3306,8 +3282,8 @@ body {
   z-index: 20;
 }
 
-.hover\:border-gray-700\/50:hover {
-  border-color: #37415180;
+.hover\:border-accent:hover {
+  border-color: hsl(var(--accent));
 }
 
 .hover\:border-primary\/50:hover {
@@ -4335,6 +4311,11 @@ body {
   background-color: #052e164d;
 }
 
+.dark\:bg-black:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .dark\:text-amber-300:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity, 1));
@@ -4576,9 +4557,8 @@ body {
   border-radius: 9999px;
 }
 
-.\[\&\:\:-webkit-slider-thumb\]\:bg-gray-300::-webkit-slider-thumb {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+.\[\&\:\:-webkit-slider-thumb\]\:bg-foreground::-webkit-slider-thumb {
+  background-color: hsl(var(--foreground));
 }
 
 .\[\&\:has\(\[aria-selected\]\)\]\:bg-accent:has([aria-selected]) {

@@ -92,3 +92,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.speak-logo-by {
+  color: transparent;
+}
+.dark .speak-logo-by {
+  color: #fff;
+}
+.speak-logo-daisys {
+  color: #111;
+}
+.dark .speak-logo-daisys {
+  color: #ECECEC;
+}
