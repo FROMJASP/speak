@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 
 type Language = "en" | "nl"
 
@@ -15,12 +15,14 @@ type LanguageProviderState = {
   language: Language
   setLanguage: (language: Language) => void
   t: (key: string) => string
+  availableLanguages: Language[]
 }
 
 const initialState: LanguageProviderState = {
   language: "en",
   setLanguage: () => null,
   t: () => "",
+  availableLanguages: ["en", "nl"],
 }
 
 const LanguageProviderContext = createContext<LanguageProviderState>(initialState)
@@ -103,20 +105,36 @@ const translations: Record<Language, Record<string, string>> = {
 }
 
 export function LanguageProvider({ children, defaultLanguage = "en" }: LanguageProviderProps) {
-  const [language, setLanguage] = useState<Language>(defaultLanguage)
+  const [language, setLanguageState] = useState<Language>(defaultLanguage)
+
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('language') : null;
+    if (saved === "en" || saved === "nl") {
+      setLanguageState(saved);
+    }
+  }, []);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('language', lang);
+    }
+  };
 
   // Translation function
   const t = (key: string): string => {
-    return translations[language][key] || key
-  }
+    return translations[language][key] || key;
+  };
 
+  const availableLanguages: Language[] = ["en", "nl"];
   const value = {
     language,
     setLanguage,
     t,
-  }
+    availableLanguages,
+  };
 
-  return <LanguageProviderContext.Provider value={value}>{children}</LanguageProviderContext.Provider>
+  return <LanguageProviderContext.Provider value={value}>{children}</LanguageProviderContext.Provider>;
 }
 
 export const useLanguage = () => {

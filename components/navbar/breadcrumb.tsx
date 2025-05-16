@@ -3,9 +3,8 @@
 import { PlusCircle } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
+import { PlanTier } from "@/data/pricing-plans"
 import ChatName from "./rename-script"
-
-type PlanTier = "free" | "pro" | "enterprise"
 
 interface BreadcrumbProps {
   projectName: string

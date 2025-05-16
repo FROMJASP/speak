@@ -12,6 +12,12 @@ import { usePlan } from "../admin/plan-context"
 import { useUser } from "@/contexts/user-context"
 import { createPortal } from "react-dom"
 import ThemeSwitcher from "../theme/theme-switcher"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 
 interface UserDropdownProps {
   avatarUrl?: string
@@ -19,7 +25,7 @@ interface UserDropdownProps {
 
 export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
   const router = useRouter()
-  const { t } = useLanguage()
+  const { t, language, setLanguage, availableLanguages } = useLanguage()
   const { currentPlan } = usePlan()
   const { user } = useUser()
   const [isPlanPreviewOpen, setIsPlanPreviewOpen] = useState(false)
@@ -116,6 +122,8 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
   // Get user email from context if available
   const email = user?.email || ""
 
+  const langs = availableLanguages ?? [];
+
   return (
     <>
       <div className="relative">
@@ -157,7 +165,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
 
               {/* Main Options */}
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]"
                 onClick={navigateToSettings}
               >
                 <Settings className="mr-2 h-3.5 w-3.5" />
@@ -165,7 +173,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
               </div>
 
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]"
                 onClick={navigateToPricing}
               >
                 <Tag className="mr-2 h-3.5 w-3.5" />
@@ -173,7 +181,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
               </div>
 
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]"
                 onClick={() => {
                   router.push("/api")
                   setIsOpen(false)
@@ -184,7 +192,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
               </div>
 
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]"
                 onClick={() => {
                   setIsFeedbackOpen(true)
                   setIsOpen(false)
@@ -196,7 +204,7 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
 
               {/* Development Testing Option */}
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]"
                 onClick={() => {
                   setIsPlanPreviewOpen(true)
                   setIsOpen(false)
@@ -217,28 +225,57 @@ export default function UserDropdown({ avatarUrl }: UserDropdownProps) {
                 <ThemeSwitcher size="sm" />
               </div>
 
-              {/* Language Selector */}
+              {/* Language Selector (Shadcn Dropdown) */}
               <div className="px-2 py-1 flex items-center justify-between">
                 <span className="text-[13px]">{t("language")}</span>
-                <div className="bg-muted px-2 py-1 rounded-md flex items-center">
-                  <span className="text-xs mr-1">English</span>
-                  <svg width="10" height="10" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M4.5 6L7.5 9L10.5 6"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className="bg-muted px-2 py-1 rounded-md flex items-center transition-colors hover:bg-accent/20 focus:outline-none"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      <span className="text-xs mr-1 capitalize">{t(language === "en" ? "english" : "dutch")}</span>
+                      <svg width="10" height="10" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.5 6L7.5 9L10.5 6"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-32">
+                    <DropdownMenuItem
+                      key="en"
+                      onClick={() => setLanguage("en")}
+                      className={
+                        language === "en"
+                          ? "font-semibold bg-accent/10"
+                          : "hover:bg-accent/10 hover:scale-[1.03] transition-all duration-150"
+                      }
+                      aria-selected={language === "en"}
+                    >
+                      {t("english")}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      key="nl"
+                      disabled
+                      className="flex items-center opacity-60 cursor-not-allowed transition-all duration-150"
+                    >
+                      {t("dutch")}
+                      <Badge variant="secondary" className="ml-2 text-[10px] px-2 py-0.5">Soon</Badge>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
 
               <div className="h-px bg-border" />
 
               {/* Sign Out */}
               <div
-                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 text-red-500"
+                className="relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03] text-red-500"
                 onClick={() => {
                   // Sign out logic
                   setIsOpen(false)
