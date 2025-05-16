@@ -11,8 +11,8 @@ export default function GUISection() {
   const [isPlaying, setIsPlaying] = useState<number | null>(null)
   const [expandedSection, setExpandedSection] = useState<"audio" | "voice" | null>(null)
 
-  // Sample audio files data
-  const audioFiles = [
+  // Make audio files dynamic
+  const [audioFiles, setAudioFiles] = useState([
     { id: 1, name: "Audio 1", duration: "0:32", date: "Today, 12:05 PM" },
     { id: 2, name: "Audio 2", duration: "1:15", date: "Today, 11:58 AM" },
     { id: 3, name: "Audio 3", duration: "0:45", date: "Today, 11:45 AM" },
@@ -22,7 +22,22 @@ export default function GUISection() {
     { id: 7, name: "Audio 7", duration: "0:36", date: "Today, 11:08 AM" },
     { id: 8, name: "Audio 8", duration: "1:24", date: "Today, 11:01 AM" },
     { id: 9, name: "Audio 9", duration: "0:52", date: "Today, 10:55 AM" },
-  ]
+  ])
+
+  // Function to add a new audio file
+  const addAudioFile = (name: string) => {
+    const now = new Date()
+    const date = now.toLocaleString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false, month: "short", day: "numeric" })
+    setAudioFiles(prev => [
+      {
+        id: prev.length ? prev[0].id + 1 : 1,
+        name,
+        duration: "0:00",
+        date: `Today, ${now.getHours()}:${now.getMinutes().toString().padStart(2, "0")}`,
+      },
+      ...prev,
+    ])
+  }
 
   const handleResize = (newHeight: number) => {
     setAudioSectionHeight(newHeight)

@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react"
 import { v4 as uuidv4 } from "uuid"
 import Navbar from "./navbar"
 import Sidebar from "./sidebar"
-import ChatSection from "./chat/chat-section"
+import ChatSection from "./script-editor/text-section"
 import GUISection from "./gui-section"
 import ResizableDivider from "./ui/resizable-divider"
 import { generateSampleConversation } from "@/data/sample-conversations"
@@ -23,7 +23,7 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
   const [showSidebar, setShowSidebar] = useState(sidebarInitiallyOpen)
   const [chatWidth, setChatWidth] = useState(65) // 65% default width for script section (GUI is 35%)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [currentChatName, setCurrentChatName] = useState("Untitled Session")
+  const [currentChatName, setCurrentChatName] = useState("Untitled Script")
   const [activeChats, setActiveChats] = useState<Chat[]>([])
   const [sampleChats, setSampleChats] = useState<Chat[]>(initialSampleChats)
   const [activeChat, setActiveChat] = useState<Chat | null>(null)
@@ -79,8 +79,8 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
     if (startNewChat === "true") {
       console.log("[Layout] Starting new chat from settings page")
 
-      // Reset state for new chat
-      setCurrentChatName("Untitled Session")
+      // Reset state for new script
+      setCurrentChatName("Untitled Script")
       setActiveChat(null)
       setUserRenamedChat(false)
       setShouldResetChat((prev) => !prev) // Toggle to trigger useEffect in ChatSection
@@ -201,8 +201,8 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
     // Save current chat if it exists and has messages
     saveCurrentChatIfNeeded()
 
-    // Reset state for new chat
-    setCurrentChatName("Untitled Session")
+    // Reset state for new script
+    setCurrentChatName("Untitled Script")
     setActiveChat(null)
     setUserRenamedChat(false)
     setShouldResetChat((prev) => !prev) // Toggle to trigger useEffect in ChatSection
@@ -216,7 +216,7 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
     }
 
     // If we have a current chat name that's not the default and it's not already saved
-    if (currentChatName !== "Untitled Session" && !activeChat) {
+    if (currentChatName !== "Untitled Script" && !activeChat) {
       const newChat: Chat = {
         id: uuidv4(),
         name: currentChatName,
