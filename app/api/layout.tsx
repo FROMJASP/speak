@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import type { ReactNode } from "react"
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/navbar/navbar"
 import { PlanProvider } from "@/components/admin/plan-context"
 
 export default function ApiLayout({ children }: { children: ReactNode }) {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import type { ReactNode } from "react"
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/navbar/navbar"
 import Sidebar from "@/components/sidebar"
 import { PlanProvider } from "@/components/admin/plan-context"
 import { sampleChats } from "@/data/sample-chats"

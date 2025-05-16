@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { v4 as uuidv4 } from "uuid"
-import Navbar from "./navbar"
+import Navbar from "./navbar/navbar"
 import Sidebar from "./sidebar"
 import ChatSection from "./script-editor/text-section"
 import GUISection from "./gui-section"

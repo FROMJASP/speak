@@ -6779,7 +6779,142 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                     align: "end",
                     contentClassName: "w-72 p-0 bg-popover border border-border",
                     fixedPosition: hasCalculatedPosition ? dropdownPosition : undefined,
-                    trigger: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    trigger: variant === "compact" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex items-center rounded-md overflow-hidden hover:bg-secondary/30 transition-colors cursor-pointer group relative min-w-[220px] px-2 py-1.5",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$PlanBadge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlanBadge"], {
+                                tier: tier,
+                                statusColor: (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageColorClass"])(usagePercentage, remainingSeconds)
+                            }, void 0, false, {
+                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                lineNumber: 277,
+                                columnNumber: 17
+                            }, void 0),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2 flex-1 min-w-0",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "h-2 w-24 min-w-[96px] flex items-center",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$AudioUsageBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AudioUsageBar"], {
+                                            usagePercentage: usagePercentage,
+                                            statusColor: (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageColorClass"])(usagePercentage, remainingSeconds)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                            lineNumber: 280,
+                                            columnNumber: 21
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                        lineNumber: 279,
+                                        columnNumber: 19
+                                    }, void 0),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: `text-xs font-medium whitespace-nowrap ${(0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageTextColorClass"])(usagePercentage, remainingSeconds)}`,
+                                        children: [
+                                            formatTimeWithoutSeconds(remainingSeconds),
+                                            " left"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                        lineNumber: 282,
+                                        columnNumber: 19
+                                    }, void 0),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs text-muted-foreground whitespace-nowrap",
+                                        children: [
+                                            "/ ",
+                                            (0, __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$pricing$2d$plans$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatAudioTime"])(totalMinutes)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                        lineNumber: 283,
+                                        columnNumber: 19
+                                    }, void 0),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs text-muted-foreground flex items-center gap-1 ml-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$days$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CalendarDays$3e$__["CalendarDays"], {
+                                                className: "h-3 w-3 flex-shrink-0"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                                lineNumber: 284,
+                                                columnNumber: 96
+                                            }, void 0),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "truncate",
+                                                children: [
+                                                    "+",
+                                                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$pricing$2d$plans$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatAudioTime"])(totalMinutes),
+                                                    " on ",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-medium text-foreground",
+                                                        children: formattedRefreshDate
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                                        lineNumber: 284,
+                                                        columnNumber: 209
+                                                    }, void 0)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                                lineNumber: 284,
+                                                columnNumber: 146
+                                            }, void 0)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                        lineNumber: 284,
+                                        columnNumber: 19
+                                    }, void 0)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                lineNumber: 278,
+                                columnNumber: 17
+                            }, void 0),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                            }, void 0, false, {
+                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                lineNumber: 286,
+                                columnNumber: 17
+                            }, void 0),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "pl-1 flex items-center text-muted-foreground",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    width: "14",
+                                    height: "14",
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "currentColor",
+                                    strokeWidth: "2",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    className: "opacity-60 group-hover:opacity-100 transition-opacity",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("polyline", {
+                                        points: "6 9 12 15 18 9"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                        lineNumber: 288,
+                                        columnNumber: 263
+                                    }, void 0)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                    lineNumber: 288,
+                                    columnNumber: 19
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                lineNumber: 287,
+                                columnNumber: 17
+                            }, void 0)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                        lineNumber: 276,
+                        columnNumber: 15
+                    }, void 0) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center rounded-md overflow-hidden hover:bg-secondary/30 transition-colors cursor-pointer group relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$PlanBadge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlanBadge"], {
@@ -6787,8 +6922,8 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                 statusColor: (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageColorClass"])(usagePercentage, remainingSeconds)
                             }, void 0, false, {
                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                lineNumber: 276,
-                                columnNumber: 15
+                                lineNumber: 293,
+                                columnNumber: 17
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "px-3 py-1.5 flex-grow",
@@ -6803,8 +6938,8 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                                     children: "Audio usage"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                    lineNumber: 280,
-                                                    columnNumber: 21
+                                                    lineNumber: 297,
+                                                    columnNumber: 23
                                                 }, void 0),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex items-center gap-1 text-xs",
@@ -6817,8 +6952,8 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                            lineNumber: 282,
-                                                            columnNumber: 23
+                                                            lineNumber: 299,
+                                                            columnNumber: 25
                                                         }, void 0),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-muted-foreground",
@@ -6828,28 +6963,35 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                            lineNumber: 285,
-                                                            columnNumber: 23
+                                                            lineNumber: 300,
+                                                            columnNumber: 25
                                                         }, void 0)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                    lineNumber: 281,
-                                                    columnNumber: 21
+                                                    lineNumber: 298,
+                                                    columnNumber: 23
                                                 }, void 0)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                            lineNumber: 279,
-                                            columnNumber: 19
+                                            lineNumber: 296,
+                                            columnNumber: 21
                                         }, void 0),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$AudioUsageBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AudioUsageBar"], {
-                                            usagePercentage: usagePercentage,
-                                            statusColor: (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageColorClass"])(usagePercentage, remainingSeconds)
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "h-2 w-24 min-w-[96px] flex items-center",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$AudioUsageBar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AudioUsageBar"], {
+                                                usagePercentage: usagePercentage,
+                                                statusColor: (0, __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$usage$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getUsageColorClass"])(usagePercentage, remainingSeconds)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
+                                                lineNumber: 304,
+                                                columnNumber: 23
+                                            }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                            lineNumber: 288,
-                                            columnNumber: 19
+                                            lineNumber: 303,
+                                            columnNumber: 21
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center mt-1 text-xs text-muted-foreground",
@@ -6860,58 +7002,57 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                                         className: "h-3 w-3 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                        lineNumber: 294,
-                                                        columnNumber: 23
+                                                        lineNumber: 308,
+                                                        columnNumber: 25
                                                     }, void 0),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "truncate",
                                                         children: [
                                                             "+",
                                                             (0, __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$pricing$2d$plans$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatAudioTime"])(totalMinutes),
-                                                            " on",
-                                                            " ",
+                                                            " on ",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "font-medium text-foreground",
                                                                 children: formattedRefreshDate
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                                lineNumber: 297,
-                                                                columnNumber: 25
+                                                                lineNumber: 309,
+                                                                columnNumber: 88
                                                             }, void 0)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                        lineNumber: 295,
-                                                        columnNumber: 23
+                                                        lineNumber: 309,
+                                                        columnNumber: 25
                                                     }, void 0)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                                lineNumber: 293,
-                                                columnNumber: 21
+                                                lineNumber: 307,
+                                                columnNumber: 23
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                            lineNumber: 292,
-                                            columnNumber: 19
+                                            lineNumber: 306,
+                                            columnNumber: 21
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                    lineNumber: 278,
-                                    columnNumber: 17
+                                    lineNumber: 295,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                lineNumber: 277,
-                                columnNumber: 15
+                                lineNumber: 294,
+                                columnNumber: 17
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
                             }, void 0, false, {
                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                lineNumber: 303,
-                                columnNumber: 15
+                                lineNumber: 314,
+                                columnNumber: 17
                             }, void 0),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "pr-3 pl-1 flex items-center text-muted-foreground",
@@ -6930,24 +7071,24 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                                         points: "6 9 12 15 18 9"
                                     }, void 0, false, {
                                         fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                        lineNumber: 317,
-                                        columnNumber: 19
+                                        lineNumber: 316,
+                                        columnNumber: 263
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                    lineNumber: 305,
-                                    columnNumber: 17
+                                    lineNumber: 316,
+                                    columnNumber: 19
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                                lineNumber: 304,
-                                columnNumber: 15
+                                lineNumber: 315,
+                                columnNumber: 17
                             }, void 0)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                        lineNumber: 275,
-                        columnNumber: 13
+                        lineNumber: 292,
+                        columnNumber: 15
                     }, void 0),
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$plan$2f$PlanUpgradeDropdown$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PlanUpgradeDropdown"], {
                         isOpen: isDropdownOpen,
@@ -6977,7 +7118,7 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                         onUpgradeClick: openUpgradeModal
                     }, void 0, false, {
                         fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                        lineNumber: 323,
+                        lineNumber: 322,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
@@ -6997,7 +7138,7 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                 selectedPlan: selectedPlan
             }, void 0, false, {
                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                lineNumber: 353,
+                lineNumber: 352,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$pricing$2f$pricing$2d$info$2d$modal$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -7005,7 +7146,7 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                 onClose: ()=>setIsPricingInfoModalOpen(false)
             }, void 0, false, {
                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                lineNumber: 360,
+                lineNumber: 359,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$tooltips$2f$beta$2d$deal$2d$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BetaDealTooltip"], {
@@ -7013,7 +7154,7 @@ function PlanUpgradeContainer({ usedSeconds, tier = "Free", variant = "default" 
                 position: tooltipPosition
             }, void 0, false, {
                 fileName: "[project]/components/plan/PlanUpgradeContainer.tsx",
-                lineNumber: 361,
+                lineNumber: 360,
                 columnNumber: 7
             }, this)
         ]
@@ -7060,7 +7201,7 @@ function Navbar({ projectName, projectId, onProjectRename, onNewChat }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "h-16 px-4 flex items-center justify-between bg-background z-10",
+        className: "h-10 px-3 flex items-center justify-between bg-background z-10 border-b border-border",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-center gap-3",
@@ -7136,9 +7277,9 @@ function Logo({ onNewChat }) {
         className: "flex items-center hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-md",
         "aria-label": "New Chat",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-            src: "/speak-logo.svg",
+            src: "/favicon.svg",
             alt: "SPEAK Logo",
-            className: "h-8"
+            className: "h-7 w-7"
         }, void 0, false, {
             fileName: "[project]/components/navbar.tsx",
             lineNumber: 71,
