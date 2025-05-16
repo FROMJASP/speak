@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Pencil } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
-import RenameChatDialog from "@/components/rename-chat-dialog"
+import RenameChatDialog from "../sidebar/sidebar-modals/rename-chat-dialog"
 
 interface ChatNameProps {
   name: string

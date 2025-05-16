@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import type { VoiceScript } from "@/data/sample-scripts"
-import ScrollableContainer from "./scrollable-container"
+import ScrollableContainer from "../ui/scrollable-container"
 
 interface ScriptEditorProps {
   script: VoiceScript

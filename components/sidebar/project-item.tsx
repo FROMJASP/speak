@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { Clock, Star } from "lucide-react"
 import type { Chat } from "@/types/chat"
 import ProjectAvatar from "./project-avatar"
-import SidebarItemMenu from "./sidebar/sidebar-item-menu"
+import SidebarItemMenu from "./sidebar-item-menu"
 
 interface ProjectItemProps {
   project: Chat

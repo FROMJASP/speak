@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   description: "Explore our pricing plans and find the best option for your needs",
 }
 
-export default function PricingLayout({ children }: { children: React.ReactNode }) {
-  return <Layout showSidebar>{children}</Layout>
+export default function PricingLayout() {
+  return <Layout sidebarInitiallyOpen />
 }

@@ -4,8 +4,8 @@ import { useState } from "react"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import ThemeSwitcher from "@/components/theme-switcher"
-import LanguageSelector from "@/components/language-selector"
+import ThemeSwitcher from "../theme/theme-switcher"
+import LanguageSelector from "../language/language-selector"
 
 export default function GeneralSettings() {
   const [suggestions, setSuggestions] = useState(true)

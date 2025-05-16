@@ -4,19 +4,23 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { v4 as uuidv4 } from "uuid"
-import Navbar from "@/components/navbar"
-import Sidebar from "@/components/sidebar"
-import ChatSection from "@/components/chat-section"
-import GUISection from "@/components/gui-section"
-import ResizableDivider from "@/components/resizable-divider"
+import Navbar from "./navbar"
+import Sidebar from "./sidebar"
+import ChatSection from "./chat/chat-section"
+import GUISection from "./gui-section"
+import ResizableDivider from "./ui/resizable-divider"
 import { generateSampleConversation } from "@/data/sample-conversations"
 import { sampleChats as initialSampleChats } from "@/data/sample-chats"
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "./ui/toaster"
 import type { Chat, Message } from "@/types/chat"
 import { PlanProvider } from "./admin/plan-context"
 
-export default function Layout() {
-  const [showSidebar, setShowSidebar] = useState(false)
+interface LayoutProps {
+  sidebarInitiallyOpen?: boolean
+}
+
+export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
+  const [showSidebar, setShowSidebar] = useState(sidebarInitiallyOpen)
   const [chatWidth, setChatWidth] = useState(65) // 65% default width for script section (GUI is 35%)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [currentChatName, setCurrentChatName] = useState("Untitled Session")

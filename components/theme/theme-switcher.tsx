@@ -3,7 +3,7 @@
 import { Monitor, Moon, Sun } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { useTheme } from "./theme-provider"
-import { useLanguage } from "./language-provider"
+import { useLanguage } from "../language/language-provider"
 import { cn } from "@/lib/utils"
 
 interface ThemeSwitcherProps {

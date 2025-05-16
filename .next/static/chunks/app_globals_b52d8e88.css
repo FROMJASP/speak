@@ -1856,24 +1856,9 @@ body {
   border-top-color: #0000;
 }
 
-.bg-\[\#1a1a1a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#27272a\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#f5f5f0\] {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 240 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#f5f5f4\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 245 244 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[--color-bg\] {
@@ -2068,10 +2053,6 @@ body {
 
 .bg-secondary\/50 {
   background-color: hsl(var(--secondary) / .5);
-}
-
-.bg-secondary\/70 {
-  background-color: hsl(var(--secondary) / .7);
 }
 
 .bg-transparent {
@@ -2570,11 +2551,6 @@ body {
   color: rgb(146 64 14 / var(--tw-text-opacity, 1));
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
@@ -2972,10 +2948,6 @@ body {
   animation-timing-function: cubic-bezier(0, 0, .2, 1);
 }
 
-.running {
-  animation-play-state: running;
-}
-
 .transition-width {
   transition-property: width;
 }
@@ -3190,16 +3162,6 @@ body {
   border-color: hsl(var(--primary) / .5);
 }
 
-.hover\:bg-\[\#27272a\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-\[\#e7e5e4\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 229 228 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:bg-\[\#e8e8e0\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(232 232 224 / var(--tw-bg-opacity, 1));
@@ -3299,11 +3261,6 @@ body {
 
 .hover\:text-accent-foreground:hover {
   color: hsl(var(--accent-foreground));
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-blue-800:hover {
@@ -4207,13 +4164,13 @@ body {
   background-color: #451a034d;
 }
 
-.dark\:bg-green-950\/30:is(.dark *) {
-  background-color: #052e164d;
-}
-
 .dark\:bg-black:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:bg-green-950\/30:is(.dark *) {
+  background-color: #052e164d;
 }
 
 .dark\:text-amber-300:is(.dark *) {

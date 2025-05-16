@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation"
 import { LogOut, Settings, Tag, Terminal, Beaker, MessageSquare, Laptop, Sun, Moon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import UserAvatar from "./user-avatar"
-import { useLanguage } from "./language-provider"
-import PlanPreviewModal from "./admin/plan-preview-modal"
+import { useLanguage } from "../language/language-provider"
+import PlanPreviewModal from "../admin/plan-preview-modal"
 import FeedbackModal from "./feedback-modal"
-import { usePlan } from "./admin/plan-context"
+import { usePlan } from "../admin/plan-context"
 import { useUser } from "@/contexts/user-context"
 import { createPortal } from "react-dom"
-import ThemeSwitcher from "./theme-switcher"
+import ThemeSwitcher from "../theme/theme-switcher"
 
 interface UserDropdownProps {
   avatarUrl?: string

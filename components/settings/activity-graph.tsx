@@ -1,9 +1,9 @@
 "use client"
 
-import { useTheme } from "@/components/theme-provider"
+import ThemeProvider from "../theme/theme-provider"
 
 export default function ActivityGraph() {
-  const { theme } = useTheme()
+  const { theme } = ThemeProvider()
   const isDark = theme === "dark"
 
   // Generate a grid of squares to represent activity

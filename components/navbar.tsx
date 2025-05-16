@@ -1,6 +1,6 @@
 "use client"
 import Breadcrumb from "@/components/navbar/breadcrumb"
-import UserDropdown from "./user-dropdown"
+import UserDropdown from "./user/user-dropdown"
 import { usePlan } from "./admin/plan-context"
 import { PlanUpgradeContainer } from "./plan/PlanUpgradeContainer"
 import { useRouter } from "next/navigation"

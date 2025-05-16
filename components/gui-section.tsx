@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Play, Pause, Download, Mic, ChevronUp, ChevronDown, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import ResizableDivider from "@/components/resizable-divider"
+import ResizableDivider from "./ui/resizable-divider"
 
 export default function GUISection() {
   const [audioSectionHeight, setAudioSectionHeight] = useState(70) // 70% default height for audio section
