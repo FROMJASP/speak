@@ -11,7 +11,7 @@ export default function ApiPage() {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-background text-foreground">
       {/* Link bar */}
       <Alert className="mb-4 flex items-center justify-between">
         <AlertDescription className="flex-1 truncate">

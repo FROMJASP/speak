@@ -15,7 +15,7 @@ export default function ApiLayout({ children }: { children: ReactNode }) {
 
   return (
     <PlanProvider>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen bg-background text-foreground">
         <Navbar projectName="API Documentation" projectId="api-docs" onNewChat={handleNewChat} />
         <main className="flex-1 overflow-hidden p-4">{children}</main>
       </div>

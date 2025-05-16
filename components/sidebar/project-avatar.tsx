@@ -1,3 +1,5 @@
+import React from "react"
+
 interface ProjectAvatarProps {
   name: string
   size?: number
@@ -7,12 +9,12 @@ export default function ProjectAvatar({ name, size = 40 }: ProjectAvatarProps) {
   // Generate a consistent color based on the project name
   const getColorFromName = (name: string) => {
     const colors = [
-      "from-blue-500 to-cyan-300", // Meditation
-      "from-indigo-600 to-blue-400", // Corporate
-      "from-purple-600 to-pink-400", // Audiobook
-      "from-green-500 to-emerald-300", // Podcast
-      "from-red-500 to-orange-300", // Commercial
-      "from-amber-500 to-yellow-300", // Default
+      "from-accent to-accent/80", // Meditation
+      "from-bold to-accent", // Corporate
+      "from-accent to-bold", // Audiobook
+      "from-bold to-accent/80", // Podcast
+      "from-accent to-bold/80", // Commercial
+      "from-accent to-accent/60", // Default
     ]
 
     if (name.toLowerCase().includes("meditation")) return colors[0]
@@ -164,11 +166,11 @@ export default function ProjectAvatar({ name, size = 40 }: ProjectAvatarProps) {
 
   return (
     <div
-      className={`w-full h-full rounded-md bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden`}
+      className={`w-full h-full rounded-md bg-[#E5E5E5] dark:bg-transparent bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden border border-border`}
       style={{ width: size, height: size }}
     >
-      {getPatternElement(name)}
-      <span className="text-white font-semibold text-sm relative z-10">{initials}</span>
+      {React.cloneElement(getPatternElement(name), { className: 'absolute inset-0 opacity-40 z-0' })}
+      <span className="font-semibold text-sm relative z-10 drop-shadow-md text-[#424041] dark:text-white">{initials}</span>
     </div>
   )
 }

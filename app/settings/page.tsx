@@ -10,7 +10,7 @@ export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profile")
 
   return (
-    <div className="container py-6 px-6 max-w-4xl">
+    <div className="container py-6 px-6 max-w-4xl bg-background text-foreground">
       <div className="flex items-center mb-6">
         <h1 className="text-2xl font-bold">Settings</h1>
       </div>

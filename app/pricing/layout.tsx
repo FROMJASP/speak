@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function PricingLayout() {
-  return <Layout sidebarInitiallyOpen />
+  return <div className="bg-background text-foreground min-h-screen"><Layout sidebarInitiallyOpen /></div>
 }

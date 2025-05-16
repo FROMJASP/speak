@@ -16,7 +16,7 @@ const ScrollableContainer = forwardRef<HTMLDivElement, ScrollableContainerProps>
       <div
         ref={ref}
         className={cn(
-          "relative overflow-y-auto custom-scrollbar border border-border/30",
+          "relative overflow-y-auto custom-scrollbar border border-border bg-background",
           {
             "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-12 after:bg-gradient-to-t after:from-transparent after:to-transparent after:pointer-events-none":
               fadeBottom,

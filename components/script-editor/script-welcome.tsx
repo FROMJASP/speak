@@ -7,10 +7,9 @@ import { Textarea } from "@/components/ui/textarea"
 import ScrollableContainer from "../ui/scrollable-container"
 import AiScriptSuggest from "./ai/AiScriptSuggest"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { ArrowUpCircle } from "lucide-react"
+import { ArrowUp, ChevronDown } from "lucide-react"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { ChevronDown } from "lucide-react"
 
 interface ScriptWelcomeProps {
   onScriptCreate?: (title: string, content: string) => void
@@ -194,13 +193,13 @@ export default function ScriptWelcome({ onScriptCreate, addAudioFile }: ScriptWe
                 </PopoverContent>
               </Popover>
               <button
-                className="flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center justify-center rounded-full bg-[var(--generate)] hover:bg-[var(--generate)]/90 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed"
                 title="Generate Audio"
                 onClick={handleCreateScript}
                 disabled={content.trim().split(/\s+/).filter(Boolean).length < 1}
                 aria-disabled={content.trim().split(/\s+/).filter(Boolean).length < 1}
               >
-                <span>Generate</span>
+                <ArrowUp className="w-5 h-5" style={{ color: 'var(--background)' }} />
               </button>
             </div>
             {showAiSuggest && content.trim() === "" && (

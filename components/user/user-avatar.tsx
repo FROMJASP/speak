@@ -15,10 +15,10 @@ export default function UserAvatar({ src, size = "md" }: UserAvatarProps) {
 
   return (
     <Avatar
-      className={`${sizeClasses[size]} cursor-pointer hover:opacity-80 transition-opacity border border-border overflow-hidden`}
+      className={`${sizeClasses[size]} cursor-pointer hover:opacity-80 transition-opacity border border-border overflow-hidden bg-muted`}
     >
-      <AvatarImage src={src || "/placeholder.svg"} alt="User" />
-      <AvatarFallback>
+      <AvatarImage src={src || "/placeholder.svg"} alt="User" className="bg-muted object-cover" />
+      <AvatarFallback className="text-foreground bg-muted">
         <User className={size === "lg" ? "h-5 w-5" : "h-4 w-4"} />
       </AvatarFallback>
     </Avatar>

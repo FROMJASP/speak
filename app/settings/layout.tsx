@@ -47,7 +47,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
 
   return (
     <PlanProvider>
-      <div className="flex flex-col h-screen overflow-hidden bg-background">
+      <div className="flex flex-col h-screen overflow-hidden bg-background text-foreground">
         <Navbar
           projectName="Settings"
           onNewChat={handleNewChat} // Pass the handler to Navbar

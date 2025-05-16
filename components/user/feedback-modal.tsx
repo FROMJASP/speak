@@ -105,7 +105,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
       title="Leave Feedback"
       description="We'd love to hear what went well or how we can improve the product experience."
     >
-      <div className="p-6">
+      <div className="p-6 bg-background text-foreground">
         <div className="mb-4">
           <Textarea
             value={feedback}
@@ -123,10 +123,10 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
               }
             }}
             placeholder="Your feedback"
-            className={`min-h-[150px] resize-none ${errors.feedback ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+            className={`min-h-[150px] resize-none bg-background text-foreground ${errors.feedback ? "border-destructive focus-visible:ring-destructive" : "border-border focus-visible:ring-ring"}`}
           />
           {errors.feedback && (
-            <div className="mt-2 flex items-center text-red-500 text-sm">
+            <div className="mt-2 flex items-center text-destructive text-sm">
               <AlertCircle className="h-4 w-4 mr-1" />
               {errors.feedback}
             </div>
@@ -140,7 +140,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
             <MoodButton mood="happy" icon={SmileIcon} />
           </div>
           {errors.mood && (
-            <div className="mt-2 flex items-center text-red-500 text-sm">
+            <div className="mt-2 flex items-center text-destructive text-sm">
               <AlertCircle className="h-4 w-4 mr-1" />
               {errors.mood}
             </div>
@@ -148,10 +148,8 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
         </div>
 
         <div className="flex justify-end gap-2">
-          <Button variant="outline" onClick={onClose}>
-            Cancel
-          </Button>
-          <Button onClick={handleSubmit}>Submit</Button>
+          <Button variant="outline" onClick={onClose} className="bg-background text-foreground border-border">Cancel</Button>
+          <Button onClick={handleSubmit} className="bg-accent text-bold dark:text-bold-dark">Submit</Button>
         </div>
       </div>
     </BaseModal>

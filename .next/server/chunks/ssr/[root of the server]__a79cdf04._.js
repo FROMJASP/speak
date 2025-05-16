@@ -79,7 +79,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", {
+const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium text-foreground ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", {
     variants: {
         variant: {
             default: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -89,8 +89,8 @@ const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_
             ghost: "hover:bg-accent hover:text-accent-foreground",
             link: "text-primary underline-offset-4 hover:underline",
             // New custom variants
-            cream: "bg-[#f5f5f0] text-gray-800 hover:bg-[#e8e8e0] dark:bg-[#f0f0e8] dark:text-gray-800 dark:hover:bg-[#e5e5d8]",
-            dark: "bg-gray-800 text-white hover:bg-gray-700 dark:bg-[#f0f0e8] dark:text-gray-800 dark:hover:bg-[#e5e5d8]"
+            cream: "bg-accent text-bold hover:bg-accent/80 dark:bg-accent dark:text-bold-dark dark:hover:bg-accent/80",
+            dark: "bg-bold text-background hover:bg-bold/90 dark:bg-bold-dark dark:text-background dark:hover:bg-bold-dark/90"
         },
         size: {
             default: "h-10 px-4 py-2",
@@ -116,7 +116,7 @@ const Button = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f
         ...props
     }, void 0, false, {
         fileName: "[project]/components/ui/button.tsx",
-        lineNumber: 46,
+        lineNumber: 45,
         columnNumber: 12
     }, this);
 });
@@ -140,7 +140,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 const Input = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, type, ...props }, ref)=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
         type: type,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", className),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("flex h-10 w-full rounded-md border border-input bg-background text-foreground px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", className),
         ref: ref,
         ...props
     }, void 0, false, {
@@ -669,7 +669,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-const badgeVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+const badgeVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
     variants: {
         variant: {
             default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
@@ -768,17 +768,19 @@ function UserAvatar({ src, size = "md" }) {
         lg: "h-10 w-10"
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
-        className: `${sizeClasses[size]} cursor-pointer hover:opacity-80 transition-opacity border border-border overflow-hidden`,
+        className: `${sizeClasses[size]} cursor-pointer hover:opacity-80 transition-opacity border border-border overflow-hidden bg-muted`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
                 src: src || "/placeholder.svg",
-                alt: "User"
+                alt: "User",
+                className: "bg-muted object-cover"
             }, void 0, false, {
                 fileName: "[project]/components/user/user-avatar.tsx",
                 lineNumber: 20,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                className: "text-foreground bg-muted",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
                     className: size === "lg" ? "h-5 w-5" : "h-4 w-4"
                 }, void 0, false, {
@@ -2572,7 +2574,7 @@ function FeedbackModal({ isOpen, onClose }) {
         title: "Leave Feedback",
         description: "We'd love to hear what went well or how we can improve the product experience.",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "p-6",
+            className: "p-6 bg-background text-foreground",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "mb-4",
@@ -2590,14 +2592,14 @@ function FeedbackModal({ isOpen, onClose }) {
                                 }
                             },
                             placeholder: "Your feedback",
-                            className: `min-h-[150px] resize-none ${errors.feedback ? "border-red-500 focus-visible:ring-red-500" : ""}`
+                            className: `min-h-[150px] resize-none bg-background text-foreground ${errors.feedback ? "border-destructive focus-visible:ring-destructive" : "border-border focus-visible:ring-ring"}`
                         }, void 0, false, {
                             fileName: "[project]/components/user/feedback-modal.tsx",
                             lineNumber: 110,
                             columnNumber: 11
                         }, this),
                         errors.feedback && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-2 flex items-center text-red-500 text-sm",
+                            className: "mt-2 flex items-center text-destructive text-sm",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                     className: "h-4 w-4 mr-1"
@@ -2656,7 +2658,7 @@ function FeedbackModal({ isOpen, onClose }) {
                             columnNumber: 11
                         }, this),
                         errors.mood && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-2 flex items-center text-red-500 text-sm",
+                            className: "mt-2 flex items-center text-destructive text-sm",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                     className: "h-4 w-4 mr-1"
@@ -2684,6 +2686,7 @@ function FeedbackModal({ isOpen, onClose }) {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             variant: "outline",
                             onClick: onClose,
+                            className: "bg-background text-foreground border-border",
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/components/user/feedback-modal.tsx",
@@ -2692,10 +2695,11 @@ function FeedbackModal({ isOpen, onClose }) {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: handleSubmit,
+                            className: "bg-accent text-bold dark:text-bold-dark",
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "[project]/components/user/feedback-modal.tsx",
-                            lineNumber: 154,
+                            lineNumber: 152,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2748,7 +2752,7 @@ function ThemeSwitcher({ size = "md" }) {
     const containerPadding = size === "sm" ? "p-0.5" : "p-1";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipProvider"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: `bg-secondary rounded-full ${containerPadding} flex items-center`,
+            className: `bg-muted dark:bg-[#232323] rounded-full ${containerPadding} flex items-center`,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
                     children: [
@@ -2756,13 +2760,13 @@ function ThemeSwitcher({ size = "md" }) {
                             asChild: true,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setTheme("system"),
-                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "system" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground"),
+                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "system" ? "bg-accent-light dark:bg-[#353535] border border-primary text-bold shadow-sm" : "text-muted-foreground hover:text-bold"),
                                 "aria-label": "System theme",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$monitor$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Monitor$3e$__["Monitor"], {
                                     className: iconSize
                                 }, void 0, false, {
                                     fileName: "[project]/components/theme/theme-switcher.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 36,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
@@ -2781,12 +2785,12 @@ function ThemeSwitcher({ size = "md" }) {
                                 children: t("system")
                             }, void 0, false, {
                                 fileName: "[project]/components/theme/theme-switcher.tsx",
-                                lineNumber: 38,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/theme/theme-switcher.tsx",
-                            lineNumber: 37,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2801,23 +2805,23 @@ function ThemeSwitcher({ size = "md" }) {
                             asChild: true,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setTheme("light"),
-                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "light" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground"),
+                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "light" ? "bg-accent-light border border-primary text-bold" : "text-muted-foreground hover:text-bold"),
                                 "aria-label": "Light theme",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sun$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sun$3e$__["Sun"], {
                                     className: iconSize
                                 }, void 0, false, {
                                     fileName: "[project]/components/theme/theme-switcher.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 56,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/theme/theme-switcher.tsx",
-                                lineNumber: 44,
+                                lineNumber: 46,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/theme/theme-switcher.tsx",
-                            lineNumber: 43,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -2826,18 +2830,18 @@ function ThemeSwitcher({ size = "md" }) {
                                 children: t("light")
                             }, void 0, false, {
                                 fileName: "[project]/components/theme/theme-switcher.tsx",
-                                lineNumber: 56,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/theme/theme-switcher.tsx",
-                            lineNumber: 55,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/theme/theme-switcher.tsx",
-                    lineNumber: 42,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -2846,23 +2850,23 @@ function ThemeSwitcher({ size = "md" }) {
                             asChild: true,
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>setTheme("dark"),
-                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "dark" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground"),
+                                className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])(`${buttonSize} rounded-full flex items-center justify-center transition-colors`, theme === "dark" ? "bg-[#353535] border border-primary text-bold-dark" : "text-muted-foreground hover:text-bold-dark"),
                                 "aria-label": "Dark theme",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$moon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Moon$3e$__["Moon"], {
                                     className: iconSize
                                 }, void 0, false, {
                                     fileName: "[project]/components/theme/theme-switcher.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 76,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/theme/theme-switcher.tsx",
-                                lineNumber: 62,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/theme/theme-switcher.tsx",
-                            lineNumber: 61,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TooltipContent"], {
@@ -2871,18 +2875,18 @@ function ThemeSwitcher({ size = "md" }) {
                                 children: t("dark")
                             }, void 0, false, {
                                 fileName: "[project]/components/theme/theme-switcher.tsx",
-                                lineNumber: 74,
+                                lineNumber: 80,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/theme/theme-switcher.tsx",
-                            lineNumber: 73,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/theme/theme-switcher.tsx",
-                    lineNumber: 60,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, this)
             ]
@@ -3251,7 +3255,7 @@ function UserDropdown({ avatarUrl }) {
                     }, this),
                     mounted && isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$dom$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createPortal"])(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: menuRef,
-                        className: "fixed z-50 w-56 overflow-hidden rounded-lg border border-border bg-popover shadow-md animate-in fade-in-0 zoom-in-95",
+                        className: "fixed z-50 w-60 overflow-hidden rounded-xl border border-border bg-[#FCFBF7] dark:bg-[#1C1C1C] text-[var(--sidebar-foreground)] shadow-md animate-in fade-in-0 zoom-in-95 p-1.5 pt-2 pb-2",
                         style: {
                             top: `${position.top}px`,
                             right: `${position.right}px`
@@ -3259,7 +3263,7 @@ function UserDropdown({ avatarUrl }) {
                         onClick: (e)=>e.stopPropagation(),
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-start gap-2.5 p-2.5",
+                                className: "flex items-start gap-2 px-2 py-1.5 bg-[#FCFBF7] dark:bg-[#1C1C1C] text-[var(--sidebar-foreground)]",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$user$2f$user$2d$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         src: userAvatar,
@@ -3276,7 +3280,7 @@ function UserDropdown({ avatarUrl }) {
                                                 className: "flex items-center gap-1.5",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "font-medium text-[13px] truncate",
+                                                        className: "font-medium text-[13px] truncate text-[var(--sidebar-foreground)]",
                                                         children: fullName
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3285,7 +3289,7 @@ function UserDropdown({ avatarUrl }) {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
                                                         variant: "outline",
-                                                        className: "text-[10px] px-1.5 py-0 h-4 bg-secondary",
+                                                        className: "text-[10px] px-1.5 py-0 h-4 bg-accent-light dark:bg-[#353535] text-bold-light dark:text-bold-dark",
                                                         children: currentPlan
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3299,7 +3303,7 @@ function UserDropdown({ avatarUrl }) {
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-[11px] text-muted-foreground truncate mt-0.5",
+                                                className: "text-[11px] text-generate-light dark:text-generate-dark truncate mt-0.5",
                                                 children: email
                                             }, void 0, false, {
                                                 fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3319,14 +3323,14 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-px bg-border"
+                                className: "h-px bg-scrollbar-light dark:bg-scrollbar-dark my-1.5"
                             }, void 0, false, {
                                 fileName: "[project]/components/user/user-dropdown.tsx",
                                 lineNumber: 164,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-[var(--sidebar-foreground)] rounded-md",
                                 onClick: navigateToSettings,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$settings$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Settings$3e$__["Settings"], {
@@ -3350,7 +3354,7 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-[var(--sidebar-foreground)] rounded-md",
                                 onClick: navigateToPricing,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tag$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Tag$3e$__["Tag"], {
@@ -3374,7 +3378,7 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-[var(--sidebar-foreground)] rounded-md",
                                 onClick: ()=>{
                                     router.push("/api");
                                     setIsOpen(false);
@@ -3401,7 +3405,7 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-[var(--sidebar-foreground)] rounded-md",
                                 onClick: ()=>{
                                     setIsFeedbackOpen(true);
                                     setIsOpen(false);
@@ -3428,7 +3432,7 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03]",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-amber-500 rounded-md",
                                 onClick: ()=>{
                                     setIsPlanPreviewOpen(true);
                                     setIsOpen(false);
@@ -3456,14 +3460,14 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-px bg-border"
+                                className: "h-px bg-scrollbar-light dark:bg-scrollbar-dark my-1.5"
                             }, void 0, false, {
                                 fileName: "[project]/components/user/user-dropdown.tsx",
                                 lineNumber: 217,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "px-2 pt-1.5 pb-1 text-[13px] text-muted-foreground font-medium",
+                                className: "px-2 pt-1.5 pb-1 text-[13px] text-generate-light dark:text-generate-dark font-medium mb-1",
                                 children: t("preferences")
                             }, void 0, false, {
                                 fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3474,8 +3478,8 @@ function UserDropdown({ avatarUrl }) {
                                 className: "px-2 py-1 flex items-center justify-between",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[13px]",
-                                        children: t("theme")
+                                        className: "text-[13px] text-[var(--sidebar-foreground)]",
+                                        children: t("Appearance")
                                     }, void 0, false, {
                                         fileName: "[project]/components/user/user-dropdown.tsx",
                                         lineNumber: 224,
@@ -3498,7 +3502,7 @@ function UserDropdown({ avatarUrl }) {
                                 className: "px-2 py-1 flex items-center justify-between",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[13px]",
+                                        className: "text-[13px] text-[var(--sidebar-foreground)]",
                                         children: t("language")
                                     }, void 0, false, {
                                         fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3510,11 +3514,11 @@ function UserDropdown({ avatarUrl }) {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
                                                 asChild: true,
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    className: "bg-muted px-2 py-1 rounded-md flex items-center transition-colors hover:bg-accent/20 focus:outline-none",
+                                                    className: "bg-accent-light dark:bg-[#232323] px-2 py-1 rounded-md flex items-center transition-colors hover:bg-accent/20 focus:outline-none text-light dark:text-dark",
                                                     onClick: (e)=>e.stopPropagation(),
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-xs mr-1 capitalize",
+                                                            className: "text-xs mr-1 capitalize text-[var(--sidebar-foreground)]",
                                                             children: t(language === "en" ? "english" : "dutch")
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/user/user-dropdown.tsx",
@@ -3560,7 +3564,7 @@ function UserDropdown({ avatarUrl }) {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                                         onClick: ()=>setLanguage("en"),
-                                                        className: language === "en" ? "font-semibold bg-accent/10" : "hover:bg-accent/10 hover:scale-[1.03] transition-all duration-150",
+                                                        className: language === "en" ? "font-semibold bg-accent-light dark:bg-[#232323] text-bold-light dark:text-bold-dark" : "hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark hover:scale-[1.03] transition-all duration-150 text-light dark:text-dark",
                                                         "aria-selected": language === "en",
                                                         children: t("english")
                                                     }, "en", false, {
@@ -3570,7 +3574,7 @@ function UserDropdown({ avatarUrl }) {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                                         disabled: true,
-                                                        className: "flex items-center opacity-60 cursor-not-allowed transition-all duration-150",
+                                                        className: "flex items-center opacity-60 cursor-not-allowed transition-all duration-150 text-light dark:text-dark",
                                                         children: [
                                                             t("dutch"),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Badge"], {
@@ -3607,14 +3611,14 @@ function UserDropdown({ avatarUrl }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-px bg-border"
+                                className: "h-px bg-scrollbar-light dark:bg-scrollbar-dark my-1.5"
                             }, void 0, false, {
                                 fileName: "[project]/components/user/user-dropdown.tsx",
                                 lineNumber: 274,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent/10 transition-all duration-150 hover:scale-[1.03] text-red-500",
+                                className: "relative flex cursor-pointer select-none items-center px-2 py-1.5 text-[13px] outline-none hover:bg-accent-light dark:hover:bg-[#232323] hover:text-bold-light dark:hover:text-bold-dark transition-all duration-150 hover:scale-[1.03] text-destructive rounded-md mt-1",
                                 onClick: ()=>{
                                     // Sign out logic
                                     setIsOpen(false);
@@ -7156,17 +7160,19 @@ __turbopack_context__.s({
     "default": (()=>ProjectAvatar)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
 ;
 function ProjectAvatar({ name, size = 40 }) {
     // Generate a consistent color based on the project name
     const getColorFromName = (name)=>{
         const colors = [
-            "from-blue-500 to-cyan-300",
-            "from-indigo-600 to-blue-400",
-            "from-purple-600 to-pink-400",
-            "from-green-500 to-emerald-300",
-            "from-red-500 to-orange-300",
-            "from-amber-500 to-yellow-300"
+            "from-accent to-accent/80",
+            "from-bold to-accent",
+            "from-accent to-bold",
+            "from-bold to-accent/80",
+            "from-accent to-bold/80",
+            "from-accent to-accent/60"
         ];
         if (name.toLowerCase().includes("meditation")) return colors[0];
         if (name.toLowerCase().includes("corporate")) return colors[1];
@@ -7199,7 +7205,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeWidth: "1.5"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 50,
+                        lineNumber: 52,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7211,7 +7217,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeDasharray: "2 2"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 51,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7221,13 +7227,13 @@ function ProjectAvatar({ name, size = 40 }) {
                         fill: "white"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 52,
+                        lineNumber: 54,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 42,
+                lineNumber: 44,
                 columnNumber: 9
             }, this);
         }
@@ -7249,7 +7255,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeWidth: "1.5"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 67,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -7261,7 +7267,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeWidth: "1.5"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 68,
+                        lineNumber: 70,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7274,7 +7280,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeDasharray: "2 2"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 69,
+                        lineNumber: 71,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7287,13 +7293,13 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeDasharray: "2 2"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 70,
+                        lineNumber: 72,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 59,
+                lineNumber: 61,
                 columnNumber: 9
             }, this);
         }
@@ -7313,7 +7319,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 85,
+                        lineNumber: 87,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -7323,13 +7329,13 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 86,
+                        lineNumber: 88,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 77,
+                lineNumber: 79,
                 columnNumber: 9
             }, this);
         }
@@ -7349,7 +7355,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 106,
+                        lineNumber: 108,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -7359,7 +7365,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 112,
+                        lineNumber: 114,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7370,7 +7376,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeWidth: "1.5"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 118,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7383,13 +7389,13 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinecap: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 119,
+                        lineNumber: 121,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 98,
+                lineNumber: 100,
                 columnNumber: 9
             }, this);
         }
@@ -7410,7 +7416,7 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeLinejoin: "round"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 134,
+                        lineNumber: 136,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7422,13 +7428,13 @@ function ProjectAvatar({ name, size = 40 }) {
                         strokeDasharray: "2 2"
                     }, void 0, false, {
                         fileName: "[project]/components/sidebar/project-avatar.tsx",
-                        lineNumber: 141,
+                        lineNumber: 143,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 126,
+                lineNumber: 128,
                 columnNumber: 9
             }, this);
         }
@@ -7449,7 +7455,7 @@ function ProjectAvatar({ name, size = 40 }) {
                     strokeWidth: "1.5"
                 }, void 0, false, {
                     fileName: "[project]/components/sidebar/project-avatar.tsx",
-                    lineNumber: 156,
+                    lineNumber: 158,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7460,38 +7466,40 @@ function ProjectAvatar({ name, size = 40 }) {
                     strokeWidth: "1"
                 }, void 0, false, {
                     fileName: "[project]/components/sidebar/project-avatar.tsx",
-                    lineNumber: 157,
+                    lineNumber: 159,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/sidebar/project-avatar.tsx",
-            lineNumber: 148,
+            lineNumber: 150,
             columnNumber: 7
         }, this);
     };
     const gradientClass = getColorFromName(name);
     const initials = getInitials(name);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `w-full h-full rounded-md bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden`,
+        className: `w-full h-full rounded-md bg-[#E5E5E5] dark:bg-transparent bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden border border-border`,
         style: {
             width: size,
             height: size
         },
         children: [
-            getPatternElement(name),
+            /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].cloneElement(getPatternElement(name), {
+                className: 'absolute inset-0 opacity-40 z-0'
+            }),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-white font-semibold text-sm relative z-10",
+                className: "font-semibold text-sm relative z-10 drop-shadow-md text-[#424041] dark:text-white",
                 children: initials
             }, void 0, false, {
                 fileName: "[project]/components/sidebar/project-avatar.tsx",
-                lineNumber: 171,
+                lineNumber: 173,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/sidebar/project-avatar.tsx",
-        lineNumber: 166,
+        lineNumber: 168,
         columnNumber: 5
     }, this);
 }
@@ -8201,7 +8209,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 const ScrollableContainer = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, fadeTop, fadeBottom, children, ...props }, ref)=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: ref,
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("relative overflow-y-auto custom-scrollbar border border-border/30", {
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("relative overflow-y-auto custom-scrollbar border border-border bg-background", {
             "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-12 after:bg-gradient-to-t after:from-transparent after:to-transparent after:pointer-events-none": fadeBottom,
             "before:absolute before:top-0 before:left-0 before:right-0 before:h-12 before:bg-gradient-to-b before:from-transparent before:to-transparent before:pointer-events-none": fadeTop
         }, className),
@@ -8449,7 +8457,7 @@ function Sidebar({ isVisible, onClose, onDropdownOpenChange, activeChats = [], o
     // Check if search is active
     const isSearching = searchQuery.trim().length > 0;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `absolute top-0 left-0 h-full w-64 bg-background border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${isVisible ? "translate-x-0" : "-translate-x-full"}`,
+        className: `absolute top-0 left-0 h-full w-64 bg-[#FCFBF7] dark:bg-[#1C1C1C] border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${isVisible ? "translate-x-0" : "-translate-x-full"}`,
         "data-sidebar-visible": isVisible,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8533,7 +8541,7 @@ function Sidebar({ isVisible, onClose, onDropdownOpenChange, activeChats = [], o
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$scrollable$2d$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                className: "px-1",
+                className: "px-1 sidebar-scrollbar",
                 children: isSearching && !hasSearchResults ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col items-center justify-center h-32 text-center px-4",
                     children: [
@@ -8779,6 +8787,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$scrollable$2d$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/scrollable-container.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/popover.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript) <export default as ChevronDown>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up.js [app-ssr] (ecmascript) <export default as ArrowUp>");
 "use client";
 ;
 ;
@@ -8903,9 +8912,10 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                             },
                             onBlur: ()=>setIsTitleFocused(false),
                             onClick: handleTitleClick,
-                            className: "w-full text-2xl font-bold bg-transparent border-0 outline-none focus:outline-none focus:ring-0 p-0 text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400",
+                            className: "w-full text-2xl font-bold bg-transparent border-0 outline-none focus:outline-none focus:ring-0 py-0 px-0 leading-[2.25rem] text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400 placeholder:font-bold placeholder:text-2xl placeholder:leading-[2.25rem]",
                             placeholder: "Untitled script",
                             style: {
+                                fontFamily: "system-ui, -apple-system, sans-serif",
                                 caretColor: "currentColor"
                             }
                         }, void 0, false, {
@@ -8924,7 +8934,7 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                             ref: textareaRef,
                             value: content,
                             onChange: (e)=>setContent(e.target.value),
-                            className: "w-full min-h-[300px] resize-none font-medium leading-relaxed p-0 border-0 focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none bg-transparent text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400 script-editor-textarea text-xl",
+                            className: "w-full min-h-[300px] resize-none font-medium leading-relaxed p-0 border-0 focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none bg-transparent text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400 script-editor-textarea text-xl placeholder:font-medium placeholder:text-xl placeholder:leading-relaxed",
                             placeholder: "Paste, write or press 'space' to generate a script, '/' for commands...",
                             style: {
                                 caretColor: "currentColor",
@@ -8937,12 +8947,12 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                             autoFocus: true
                         }, void 0, false, {
                             fileName: "[project]/components/script-editor/script-editor.tsx",
-                            lineNumber: 138,
+                            lineNumber: 139,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/script-editor/script-editor.tsx",
-                        lineNumber: 137,
+                        lineNumber: 138,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8963,25 +8973,25 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                                                     children: selectedModalObj?.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/script-editor/script-editor.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 165,
                                                     columnNumber: 35
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                     className: "h-4 w-4 ml-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/script-editor/script-editor.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 166,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/script-editor/script-editor.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 160,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/script-editor/script-editor.tsx",
-                                        lineNumber: 158,
+                                        lineNumber: 159,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -9001,7 +9011,7 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                                                             children: opt.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/script-editor/script-editor.tsx",
-                                                            lineNumber: 176,
+                                                            lineNumber: 177,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9009,53 +9019,56 @@ function ScriptEditor({ script, onSave, onTitleChange, addAudioFile }) {
                                                             children: opt.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/script-editor/script-editor.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 178,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, opt.value, true, {
                                                     fileName: "[project]/components/script-editor/script-editor.tsx",
-                                                    lineNumber: 171,
+                                                    lineNumber: 172,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/script-editor/script-editor.tsx",
-                                            lineNumber: 169,
+                                            lineNumber: 170,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/script-editor/script-editor.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 169,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/script-editor/script-editor.tsx",
-                                lineNumber: 157,
+                                lineNumber: 158,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed",
+                                className: "flex items-center justify-center rounded-full bg-[var(--generate)] hover:bg-[var(--generate)]/90 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed",
                                 title: "Generate Audio",
                                 onClick: handleSave,
                                 disabled: content.trim().split(/\s+/).filter(Boolean).length < 1,
                                 "aria-disabled": content.trim().split(/\s+/).filter(Boolean).length < 1,
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "Generate"
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__["ArrowUp"], {
+                                    className: "w-5 h-5",
+                                    style: {
+                                        color: 'var(--background)'
+                                    }
                                 }, void 0, false, {
                                     fileName: "[project]/components/script-editor/script-editor.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 191,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/script-editor/script-editor.tsx",
-                                lineNumber: 183,
+                                lineNumber: 184,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/script-editor/script-editor.tsx",
-                        lineNumber: 156,
+                        lineNumber: 157,
                         columnNumber: 11
                     }, this)
                 ]
@@ -9408,8 +9421,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$scrollable$2d$container$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/scrollable-container.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$script$2d$editor$2f$ai$2f$AiScriptSuggest$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/script-editor/ai/AiScriptSuggest.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tooltip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/tooltip.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/popover.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-up.js [app-ssr] (ecmascript) <export default as ArrowUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-ssr] (ecmascript) <export default as ChevronDown>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/popover.tsx [app-ssr] (ecmascript)");
 "use client";
 ;
 ;
@@ -9560,12 +9574,12 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                             }
                         }, void 0, false, {
                             fileName: "[project]/components/script-editor/script-welcome.tsx",
-                            lineNumber: 129,
+                            lineNumber: 128,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/script-editor/script-welcome.tsx",
-                        lineNumber: 128,
+                        lineNumber: 127,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9585,7 +9599,7 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                lineNumber: 155,
+                                lineNumber: 154,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9606,25 +9620,25 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                                                             children: selectedModalObj?.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 176,
                                                             columnNumber: 37
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                             className: "h-4 w-4 ml-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 177,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                    lineNumber: 172,
+                                                    lineNumber: 171,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 170,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -9644,7 +9658,7 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                                                                     children: opt.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                                    lineNumber: 189,
+                                                                    lineNumber: 188,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9652,53 +9666,56 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                                                                     children: opt.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                                    lineNumber: 190,
+                                                                    lineNumber: 189,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, opt.value, true, {
                                                             fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                            lineNumber: 184,
+                                                            lineNumber: 183,
                                                             columnNumber: 23
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 181,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 180,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 169,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "flex items-center gap-2 rounded-full bg-neutral-900 hover:bg-neutral-800 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed",
+                                        className: "flex items-center justify-center rounded-full bg-[var(--generate)] hover:bg-[var(--generate)]/90 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed",
                                         title: "Generate Audio",
                                         onClick: handleCreateScript,
                                         disabled: content.trim().split(/\s+/).filter(Boolean).length < 1,
                                         "aria-disabled": content.trim().split(/\s+/).filter(Boolean).length < 1,
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Generate"
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__["ArrowUp"], {
+                                            className: "w-5 h-5",
+                                            style: {
+                                                color: 'var(--background)'
+                                            }
                                         }, void 0, false, {
                                             fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 202,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 195,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                lineNumber: 169,
+                                lineNumber: 168,
                                 columnNumber: 13
                             }, this),
                             showAiSuggest && content.trim() === "" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9721,39 +9738,39 @@ function ScriptWelcome({ onScriptCreate, addAudioFile }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 208,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 207,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                                lineNumber: 207,
+                                lineNumber: 206,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/script-editor/script-welcome.tsx",
-                        lineNumber: 154,
+                        lineNumber: 153,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/script-editor/script-welcome.tsx",
-                lineNumber: 126,
+                lineNumber: 125,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/script-editor/script-welcome.tsx",
-            lineNumber: 125,
+            lineNumber: 124,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/script-editor/script-welcome.tsx",
-        lineNumber: 124,
+        lineNumber: 123,
         columnNumber: 5
     }, this);
 }

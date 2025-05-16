@@ -251,7 +251,7 @@ export default function Sidebar({
 
   return (
     <div
-      className={`absolute top-0 left-0 h-full w-64 bg-background border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${
+      className={`absolute top-0 left-0 h-full w-64 bg-[#FCFBF7] dark:bg-[#1C1C1C] border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${
         isVisible ? "translate-x-0" : "-translate-x-full"
       }`}
       data-sidebar-visible={isVisible}
@@ -288,7 +288,7 @@ export default function Sidebar({
         </div>
       </div>
 
-      <ScrollableContainer className="px-1">
+      <ScrollableContainer className="px-1 sidebar-scrollbar">
         {isSearching && !hasSearchResults ? (
           <div className="flex flex-col items-center justify-center h-32 text-center px-4">
             <p className="text-muted-foreground text-sm mb-1">{t("noResults")}</p>

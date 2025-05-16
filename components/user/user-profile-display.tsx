@@ -29,15 +29,15 @@ export default function UserProfileDisplay() {
       <UserAvatar src={user.avatarUrl} size="lg" />
       <div>
         <div className="flex items-center gap-2">
-          <h3 className="font-medium">
+          <h3 className="font-medium text-foreground">
             {user.firstName} {user.lastName}
           </h3>
-          <Badge variant="outline" className="text-xs bg-secondary">
+          <Badge variant="outline" className="text-xs bg-secondary text-secondary-foreground">
             {user.plan}
           </Badge>
         </div>
         <p className="text-xs text-muted-foreground">{user.email}</p>
-        {user.bio && <p className="text-sm mt-1">{user.bio}</p>}
+        {user.bio && <p className="text-sm mt-1 text-foreground">{user.bio}</p>}
       </div>
     </div>
   )

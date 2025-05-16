@@ -20,14 +20,16 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
 
   return (
     <TooltipProvider>
-      <div className={`bg-secondary rounded-full ${containerPadding} flex items-center`}>
+      <div className={`bg-muted dark:bg-[#232323] rounded-full ${containerPadding} flex items-center`}>
         <Tooltip>
           <TooltipTrigger asChild>
             <button
               onClick={() => setTheme("system")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "system" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground",
+                theme === "system"
+                  ? "bg-accent-light dark:bg-[#353535] border border-primary text-bold shadow-sm"
+                  : "text-muted-foreground hover:text-bold",
               )}
               aria-label="System theme"
             >
@@ -45,7 +47,9 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
               onClick={() => setTheme("light")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "light" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground",
+                theme === "light"
+                  ? "bg-accent-light border border-primary text-bold"
+                  : "text-muted-foreground hover:text-bold",
               )}
               aria-label="Light theme"
             >
@@ -63,7 +67,9 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
               onClick={() => setTheme("dark")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "dark" ? "bg-background text-foreground" : "text-muted-foreground hover:text-foreground",
+                theme === "dark"
+                  ? "bg-[#353535] border border-primary text-bold-dark"
+                  : "text-muted-foreground hover:text-bold-dark",
               )}
               aria-label="Dark theme"
             >
