@@ -1,6 +1,11 @@
 import type { UserProfile, UserPreferences, UserStats } from "@/types/user"
 import { userData as mockUserData } from "@/data/user-data"
 
+/**
+ * BACKEND CONTRACT:
+ * GET /api/me -> UserProfile
+ * UserProfile must include: id, username, firstName, lastName, email, emailVerified, bio, avatarUrl, plan, signupDate, lastLogin, preferences, role
+ */
 // This is the abstraction layer for user data
 // When migrating to a real database, only this file needs to change
 export class UserService {
@@ -30,6 +35,7 @@ export class UserService {
         language: mockUserData.language,
         theme: "dark",
       },
+      role: mockUserData.role || "user", // Ensure role is present
     }
   }
 

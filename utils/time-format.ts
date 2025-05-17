@@ -87,3 +87,50 @@ export function formatTimeFromSeconds(seconds: number): string {
 
   return `${hours}h ${remainingMinutes}m`
 }
+
+/**
+ * Format minutes into a human-readable time format (e.g., 1h 30m)
+ * @param minutes Number of minutes
+ * @returns Human-readable time string
+ */
+export function formatAudioTime(minutes: number): string {
+  if (minutes < 60) {
+    return `${minutes}m`
+  }
+  const hours = Math.floor(minutes / 60)
+  const remainingMinutes = minutes % 60
+  if (remainingMinutes === 0) {
+    return `${hours}h`
+  }
+  return `${hours}h ${remainingMinutes}m`
+}
+
+/**
+ * Format minutes into a compact time format (e.g., 1h)
+ * @param minutes Number of minutes
+ * @returns Compact time string
+ */
+export function formatAudioTimeCompact(minutes: number): string {
+  if (minutes < 60) {
+    return `${minutes}m`
+  }
+  const hours = Math.floor(minutes / 60)
+  return `${hours}h`
+}
+
+/**
+ * Format minutes into a human-readable extra time format (e.g., 1hr 30min)
+ * @param minutes Number of minutes
+ * @returns Extra time string
+ */
+export function formatAudioTimeExtra(minutes: number): string {
+  if (minutes < 60) {
+    return `${minutes}min`
+  }
+  const hours = Math.floor(minutes / 60)
+  const remainingMinutes = minutes % 60
+  if (remainingMinutes === 0) {
+    return `${hours}hr`
+  }
+  return `${hours}hr ${remainingMinutes}min`
+}

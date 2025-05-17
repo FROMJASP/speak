@@ -32,7 +32,7 @@ export default function UserProfileDisplay() {
           <h3 className="font-medium text-foreground">
             {user.firstName} {user.lastName}
           </h3>
-          <Badge variant="outline" className="text-xs bg-secondary text-secondary-foreground">
+          <Badge variant="outline" className="text-xs bg-muted text-foreground">
             {user.plan}
           </Badge>
         </div>

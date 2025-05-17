@@ -20,10 +20,10 @@ export default function TimeCategory({ title, count, children }: TimeCategoryPro
 
   return (
     <div className="mb-2">
-      <div className="w-full px-3 py-1.5 text-xs font-medium text-muted-foreground">
+      <div className="w-full px-3 py-1.5 text-xs font-medium text-foreground">
         <div className="flex items-center justify-between">
           <span>{title}</span>
-          {count !== undefined && <span className="text-xs text-muted-foreground">{count}</span>}
+          {count !== undefined && <span className="text-xs text-foreground">{count}</span>}
         </div>
       </div>
 

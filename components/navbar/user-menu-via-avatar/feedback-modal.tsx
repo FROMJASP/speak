@@ -85,7 +85,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
     <Button
       variant="outline"
       size="icon"
-      className={`rounded-full h-12 w-12 ${selectedMood === mood ? "bg-secondary" : ""}`}
+      className={`rounded-full h-12 w-12 ${selectedMood === mood ? "bg-muted" : ""}`}
       onClick={() => {
         setSelectedMood(mood)
         // Clear mood error when a selection is made
@@ -149,7 +149,7 @@ export default function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
 
         <div className="flex justify-end gap-2">
           <Button variant="outline" onClick={onClose} className="bg-background text-foreground border-border">Cancel</Button>
-          <Button onClick={handleSubmit} className="bg-accent text-bold dark:text-bold-dark">Submit</Button>
+          <Button onClick={handleSubmit} className="bg-muted text-primary">Submit</Button>
         </div>
       </div>
     </BaseModal>

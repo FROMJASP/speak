@@ -52,7 +52,7 @@ export default function ProjectCategory({
       >
         <div className="flex items-center">
           <ChevronRight className={cn("h-3 w-3 mr-1 transition-transform", expanded ? "rotate-90" : "")} />
-          <span>{title}</span>
+          <span className="text-foreground">{title}</span>
         </div>
         {count !== undefined && (
           <span className="bg-secondary text-secondary-foreground text-xs rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">

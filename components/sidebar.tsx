@@ -8,8 +8,8 @@ import { Input } from "@/components/ui/input"
 import ProjectItem from "./sidebar/project-item"
 import ProjectCategory from "./sidebar/project-category"
 import TimeCategory from "./sidebar/time-category"
-import RenameChatDialog from "./sidebar/sidebar-modals/rename-chat-dialog"
-import DeleteChatModal from "./sidebar/sidebar-modals/delete-chat-modal"
+import RenameScriptDialog from "./sidebar/sidebar-modals/rename-script-dialog"
+import DeleteScriptModal from "./sidebar/sidebar-modals/delete-script-modal"
 import ScrollableContainer from "./ui/scrollable-container"
 import { useLanguage } from "./language/language-provider"
 import type { Chat } from "@/types/chat"
@@ -251,7 +251,7 @@ export default function Sidebar({
 
   return (
     <div
-      className={`absolute top-0 left-0 h-full w-64 bg-[#FCFBF7] dark:bg-[#1C1C1C] border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${
+      className={`absolute top-0 left-0 h-full w-64 bg-background border-r border-border z-20 transform transition-transform duration-300 flex flex-col rounded-md ${
         isVisible ? "translate-x-0" : "-translate-x-full"
       }`}
       data-sidebar-visible={isVisible}
@@ -259,7 +259,7 @@ export default function Sidebar({
       <div className="p-3 pt-4 shrink-0">
         <Button
           variant="outline"
-          className="w-full justify-center gap-2 text-sm h-9 px-4 mb-3"
+          className="w-full justify-center gap-2 text-sm h-9 px-4 mb-3 bg-muted border border-default hover:bg-[#D7D6CF] dark:hover:bg-muted"
           onClick={handleNewSessionClick}
         >
           <Plus className="h-4 w-4" />
@@ -268,17 +268,17 @@ export default function Sidebar({
 
         {/* Search input */}
         <div className="relative">
-          <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Search className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground border border-default" />
           <Input
             placeholder={t("Search scripts")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-9 h-9 text-sm"
+            className="pl-9 h-9 text-sm bg-muted border border-default"
           />
           {searchQuery && (
             <button
               onClick={clearSearch}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-muted-foreground hover:bg-[#D7D6CF] dark:hover:bg-muted"
               aria-label={t("clearSearch")}
             >
               <X className="h-4 w-4" />
@@ -343,8 +343,8 @@ export default function Sidebar({
       </ScrollableContainer>
 
       {chatToRename && (
-        <RenameChatDialog
-          chatId={chatToRename.id}
+        <RenameScriptDialog
+          scriptId={chatToRename.id}
           currentName={chatToRename.name}
           isOpen={renameDialogOpen}
           onClose={() => setRenameDialogOpen(false)}
@@ -353,9 +353,9 @@ export default function Sidebar({
       )}
 
       {chatToDelete && (
-        <DeleteChatModal
-          chatId={chatToDelete.id}
-          chatName={chatToDelete.name}
+        <DeleteScriptModal
+          scriptId={chatToDelete.id}
+          scriptName={chatToDelete.name}
           isFavorite={favorites.includes(chatToDelete.id)}
           isOpen={deleteDialogOpen}
           onClose={() => setDeleteDialogOpen(false)}

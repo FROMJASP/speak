@@ -9,14 +9,32 @@ import Sidebar from "./sidebar"
 import ChatSection from "./script-editor/text-section"
 import GUISection from "./gui-section"
 import ResizableDivider from "./ui/resizable-divider"
-import { generateSampleConversation } from "@/data/sample-conversations"
-import { sampleChats as initialSampleChats } from "@/data/sample-chats"
 import { Toaster } from "./ui/toaster"
 import type { Chat, Message } from "@/types/chat"
-import { PlanProvider } from "./admin/plan-context"
+import { PlanProvider } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
+import { useMockData } from "@/utils/env"
+import { getChats } from "@/lib/api/chat-service"
 
 interface LayoutProps {
   sidebarInitiallyOpen?: boolean
+}
+
+const isMock = useMockData()
+
+// Conditional imports for chats and conversations
+type ChatsImport = typeof import("@/data/sample/sample-chats")
+type ConversationsImport = typeof import("@/data/sample/sample-conversations")
+
+let sampleChats: ChatsImport["sampleChats"]
+let generateSampleConversation: ConversationsImport["generateSampleConversation"]
+
+if (isMock) {
+  sampleChats = require("@/data/sample/sample-chats").sampleChats
+  generateSampleConversation = require("@/data/sample/sample-conversations").generateSampleConversation
+} else {
+  // TODO: Import real data here when backend is ready
+  sampleChats = require("@/data/sample/sample-chats").sampleChats
+  generateSampleConversation = require("@/data/sample/sample-conversations").generateSampleConversation
 }
 
 export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
@@ -25,7 +43,7 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [currentChatName, setCurrentChatName] = useState("Untitled Script")
   const [activeChats, setActiveChats] = useState<Chat[]>([])
-  const [sampleChats, setSampleChats] = useState<Chat[]>(initialSampleChats)
+  const [sampleChats, setSampleChats] = useState<Chat[]>([])
   const [activeChat, setActiveChat] = useState<Chat | null>(null)
   const [shouldResetChat, setShouldResetChat] = useState(false)
   const [userRenamedChat, setUserRenamedChat] = useState(false)
@@ -56,7 +74,7 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
   // Initialize sample chats
   useEffect(() => {
     console.log("[Layout] Initializing sample chats")
-    setSampleChats(initialSampleChats)
+    getChats().then(setSampleChats)
 
     // Check if there's a selected chat from settings page
     const selectedChatId = localStorage.getItem("selectedChatId")
@@ -64,16 +82,15 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
       console.log("[Layout] Found selected chat ID from settings:", selectedChatId)
 
       // Find the chat in sample chats
-      const selectedChat = initialSampleChats.find((chat) => chat.id === selectedChatId)
-
-      if (selectedChat) {
-        console.log("[Layout] Found selected chat:", selectedChat.name)
+      const selectedChat = [] as Chat[]
+      if (selectedChat.length > 0) {
+        console.log("[Layout] Found selected chat:", selectedChat[0].name)
         // Set as active chat
-        setActiveChat(selectedChat)
-        setCurrentChatName(selectedChat.name)
+        setActiveChat(selectedChat[0])
+        setCurrentChatName(selectedChat[0].name)
 
         // Move to active chats if it's a sample chat
-        setActiveChats((prev) => [...prev, { ...selectedChat, lastEdited: "Just now", timestamp: new Date() }])
+        setActiveChats((prev) => [...prev, { ...selectedChat[0], lastEdited: "Just now", timestamp: new Date() }])
         setSampleChats((prev) => prev.filter((chat) => chat.id !== selectedChatId))
 
         // Show sidebar initially but disable auto-show for a short period
@@ -388,15 +405,11 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
           </div>
 
           <div className="flex flex-1 overflow-hidden p-3 gap-3">
-            <div className="overflow-hidden transition-width duration-100 ease-out" style={{ width: `${chatWidth}%` }}>
-              <ChatSection
-                activeChat={activeChat}
-                onChatStarted={handleChatStarted}
-                onChatUpdated={handleChatUpdated}
-                onNewChat={shouldResetChat ? handleNewChat : undefined}
-                onTitleChange={setCurrentChatName}
-                addAudioFile={addAudioFile}
-              />
+            <div
+              className="overflow-hidden transition-width duration-100 ease-out"
+              style={{ width: `${100 - chatWidth}%` }}
+            >
+              <GUISection audioFiles={audioFiles} addAudioFile={addAudioFile} />
             </div>
 
             <ResizableDivider
@@ -406,11 +419,15 @@ export default function Layout({ sidebarInitiallyOpen = false }: LayoutProps) {
               minRightWidth={25}
             />
 
-            <div
-              className="overflow-hidden transition-width duration-100 ease-out"
-              style={{ width: `${100 - chatWidth}%` }}
-            >
-              <GUISection audioFiles={audioFiles} addAudioFile={addAudioFile} />
+            <div className="overflow-hidden transition-width duration-100 ease-out" style={{ width: `${chatWidth}%` }}>
+              <ChatSection
+                activeChat={activeChat}
+                onChatStarted={handleChatStarted}
+                onChatUpdated={handleChatUpdated}
+                onNewChat={shouldResetChat ? handleNewChat : undefined}
+                onTitleChange={setCurrentChatName}
+                addAudioFile={addAudioFile}
+              />
             </div>
           </div>
         </div>

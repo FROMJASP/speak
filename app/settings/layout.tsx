@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation"
 import type { ReactNode } from "react"
 import Navbar from "@/components/navbar/navbar"
 import Sidebar from "@/components/sidebar"
-import { PlanProvider } from "@/components/admin/plan-context"
-import { sampleChats } from "@/data/sample-chats"
+import { PlanProvider } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
+import { sampleChats } from "@/data/sample/sample-chats"
 import type { Chat } from "@/types/chat"
 
 interface SettingsLayoutProps {

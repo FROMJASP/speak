@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { usePlan } from "@/components/admin/plan-context"
-import { pricingPlans, type PricingPlan, formatAudioTime } from "@/data/pricing-plans"
+import { usePlan } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
+import { pricingPlans, type PricingPlan } from "@/data/pricing-plans"
+import { formatAudioTime } from "@/utils/time-format"
 import PricingToggle from "@/components/pricing/pricing-toggle"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Check, Info, Users, AlertTriangle, Download, MessageSquare, Sparkles } from "lucide-react"

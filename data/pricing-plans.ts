@@ -115,67 +115,6 @@ export function getPlan(tier: PlanTier): PricingPlan {
   return pricingPlans.find((plan) => plan.tier === tier) || pricingPlans[0]
 }
 
-// Update the formatAudioTime function to use the new abbreviations
-export function formatAudioTime(minutes: number): string {
-  if (minutes < 60) {
-    return `${minutes}m`
-  }
-
-  const hours = Math.floor(minutes / 60)
-  const remainingMinutes = minutes % 60
-
-  if (remainingMinutes === 0) {
-    return `${hours}h`
-  }
-
-  return `${hours}h ${remainingMinutes}m`
-}
-
-// Update the formatAudioTimeCompact function to use the new abbreviations
-export function formatAudioTimeCompact(minutes: number): string {
-  if (minutes < 60) {
-    return `${minutes}m`
-  }
-
-  const hours = Math.floor(minutes / 60)
-  return `${hours}h`
-}
-
-// Format audio time for displaying extra time with minutes/hours
-export function formatAudioTimeExtra(minutes: number): string {
-  if (minutes < 60) {
-    return `${minutes}min`
-  }
-
-  const hours = Math.floor(minutes / 60)
-  const remainingMinutes = minutes % 60
-
-  if (remainingMinutes === 0) {
-    return `${hours}hr`
-  }
-
-  return `${hours}hr ${remainingMinutes}min`
-}
-
-// Update the formatTimeFromSeconds function to use the new abbreviations
-export function formatTimeFromSeconds(seconds: number): string {
-  const minutes = Math.floor(seconds / 60)
-  const remainingSeconds = Math.floor(seconds % 60)
-
-  if (minutes < 60) {
-    return `${minutes}m ${remainingSeconds}s`
-  }
-
-  const hours = Math.floor(minutes / 60)
-  const remainingMinutes = minutes % 60
-
-  if (remainingMinutes === 0) {
-    return `${hours}h`
-  }
-
-  return `${hours}h ${remainingMinutes}m`
-}
-
 // Calculate monthly equivalent when paid annually
 export function calculateMonthlyEquivalent(annualPrice: number): number {
   return annualPrice / 12

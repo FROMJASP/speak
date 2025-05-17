@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { pricingPlans, formatAudioTime, type PlanTier } from "@/data/pricing-plans"
+import { pricingPlans, type PlanTier } from "@/data/pricing-plans"
+import { formatAudioTime } from "@/utils/time-format"
 import { Check, Info, AlertTriangle } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -94,7 +95,7 @@ export default function UpgradeModal({ isOpen, onClose, currentPlan, selectedPla
               <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
               <TabsTrigger value="annual">
                 Annual Billing
-                <Badge variant="secondary" className="ml-2 bg-green-500/10 text-green-600 border-green-500/20">
+                <Badge variant="outline" className="ml-2 bg-green-500/10 text-green-600 border-green-500/20">
                   Save 20%
                 </Badge>
               </TabsTrigger>

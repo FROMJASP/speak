@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { Textarea } from "@/components/ui/textarea"
-import type { VoiceScript } from "@/data/sample-scripts"
+import type { VoiceScript } from "@/types/voice-script"
 import ScrollableContainer from "../ui/scrollable-container"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
@@ -110,7 +110,7 @@ export default function ScriptEditor({ script, onSave, onTitleChange, addAudioFi
   }, [script.title])
 
   return (
-    <div className="flex flex-col h-full bg-background rounded-xl">
+    <div className="flex flex-col h-full border border-default rounded-2xl shadow-2xl">
       <ScrollableContainer className="flex-grow" ref={containerRef}>
         <div className={`py-6 ${getContentPadding()} transition-all duration-200`}>
           {/* Title input */}
@@ -126,7 +126,7 @@ export default function ScriptEditor({ script, onSave, onTitleChange, addAudioFi
               }}
               onBlur={() => setIsTitleFocused(false)}
               onClick={handleTitleClick}
-              className="w-full text-2xl font-bold bg-transparent border-0 outline-none focus:outline-none focus:ring-0 py-0 px-0 leading-[2.25rem] text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400 placeholder:font-bold placeholder:text-2xl placeholder:leading-[2.25rem]"
+              className="w-full text-2xl font-bold bg-transparent border-0 outline-none focus:outline-none focus:ring-0 py-0 px-0 leading-[2.25rem] text-foreground dark:text-foreground placeholder:text-muted-foreground dark:placeholder:text-muted-foreground placeholder:font-bold placeholder:text-2xl placeholder:leading-[2.25rem]"
               placeholder="Untitled script"
               style={{
                 fontFamily: "system-ui, -apple-system, sans-serif",
@@ -140,7 +140,7 @@ export default function ScriptEditor({ script, onSave, onTitleChange, addAudioFi
               ref={textareaRef}
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="w-full min-h-[300px] resize-none font-medium leading-relaxed p-0 border-0 focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none bg-transparent text-foreground dark:text-foreground placeholder:text-gray-400 dark:placeholder:text-gray-400 script-editor-textarea text-xl placeholder:font-medium placeholder:text-xl placeholder:leading-relaxed"
+              className="w-full min-h-[300px] resize-none font-medium leading-relaxed p-0 border-0 focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none bg-transparent text-foreground dark:text-foreground placeholder:text-muted-foreground dark:placeholder:text-muted-foreground script-editor-textarea text-xl placeholder:font-medium placeholder:text-xl placeholder:leading-relaxed"
               placeholder="Paste, write or press 'space' to generate a script, '/' for commands..."
               style={{
                 caretColor: "currentColor",
@@ -152,44 +152,6 @@ export default function ScriptEditor({ script, onSave, onTitleChange, addAudioFi
               }}
               autoFocus
             />
-          </div>
-          {/* Modal selection info with popover */}
-          <div className="flex flex-row gap-2 justify-end items-end mt-1">
-            <Popover>
-              <PopoverTrigger asChild>
-                <button
-                  className="flex items-center gap-2 px-3 py-2 rounded-md border border-border bg-background text-foreground font-medium text-base hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-                  type="button"
-                  aria-label="Select modal"
-                >
-                  Selected modal: <span className="font-semibold ml-1">{selectedModalObj?.label}</span>
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </button>
-              </PopoverTrigger>
-              <PopoverContent align="end" className="w-80 p-2">
-                <div className="flex flex-col gap-1">
-                  {modalOptions.map(opt => (
-                    <button
-                      key={opt.value}
-                      className={`w-full text-left px-3 py-2 rounded-md hover:bg-accent transition-colors ${selectedModal === opt.value ? 'bg-accent/50 font-semibold' : ''}`}
-                      onClick={() => { setSelectedModal(opt.value); (document.activeElement as HTMLElement)?.blur(); }}
-                    >
-                      <div className="font-medium text-base">{opt.label}</div>
-                      <div className="text-xs text-muted-foreground pt-1 whitespace-normal">{opt.description}</div>
-                    </button>
-                  ))}
-                </div>
-              </PopoverContent>
-            </Popover>
-            <button
-              className="flex items-center justify-center rounded-full bg-[var(--generate)] hover:bg-[var(--generate)]/90 transition-colors px-5 py-2 h-10 text-white font-semibold shadow-md border border-neutral-800 disabled:opacity-50 disabled:cursor-not-allowed"
-              title="Generate Audio"
-              onClick={handleSave}
-              disabled={content.trim().split(/\s+/).filter(Boolean).length < 1}
-              aria-disabled={content.trim().split(/\s+/).filter(Boolean).length < 1}
-            >
-              <ArrowUp className="w-5 h-5" style={{ color: 'var(--background)' }} />
-            </button>
           </div>
         </div>
       </ScrollableContainer>

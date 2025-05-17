@@ -9237,18 +9237,14 @@ function Layout({ sidebarInitiallyOpen = false }) {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "overflow-hidden transition-width duration-100 ease-out",
                                     style: {
-                                        width: `${chatWidth}%`
+                                        width: `${100 - chatWidth}%`
                                     },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$script$2d$editor$2f$text$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        activeChat: activeChat,
-                                        onChatStarted: handleChatStarted,
-                                        onChatUpdated: handleChatUpdated,
-                                        onNewChat: shouldResetChat ? handleNewChat : undefined,
-                                        onTitleChange: setCurrentChatName,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$gui$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        audioFiles: audioFiles,
                                         addAudioFile: addAudioFile
                                     }, void 0, false, {
                                         fileName: "[project]/components/layout.tsx",
-                                        lineNumber: 392,
+                                        lineNumber: 395,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
@@ -9263,25 +9259,29 @@ function Layout({ sidebarInitiallyOpen = false }) {
                                     minRightWidth: 25
                                 }, void 0, false, {
                                     fileName: "[project]/components/layout.tsx",
-                                    lineNumber: 402,
+                                    lineNumber: 398,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "overflow-hidden transition-width duration-100 ease-out",
                                     style: {
-                                        width: `${100 - chatWidth}%`
+                                        width: `${chatWidth}%`
                                     },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$gui$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        audioFiles: audioFiles,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$script$2d$editor$2f$text$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        activeChat: activeChat,
+                                        onChatStarted: handleChatStarted,
+                                        onChatUpdated: handleChatUpdated,
+                                        onNewChat: shouldResetChat ? handleNewChat : undefined,
+                                        onTitleChange: setCurrentChatName,
                                         addAudioFile: addAudioFile
                                     }, void 0, false, {
                                         fileName: "[project]/components/layout.tsx",
-                                        lineNumber: 413,
+                                        lineNumber: 406,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/layout.tsx",
-                                    lineNumber: 409,
+                                    lineNumber: 405,
                                     columnNumber: 13
                                 }, this)
                             ]

@@ -4,7 +4,7 @@ import type React from "react"
 
 import { ThemeProvider } from "../components/theme/theme-provider"
 import { LanguageProvider } from "../components/language/language-provider"
-import { PlanProvider } from "@/components/admin/plan-context"
+import { PlanProvider } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
 import { UserProvider } from "@/contexts/user-context"
 import { Toaster } from "@/components/ui/toaster"
 

@@ -28,11 +28,11 @@ body {
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
+    --muted: #F9F4EB;
     --muted-foreground: 0 0% 45.1%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
+    --border: #EAE9E2;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --chart-1: 12 76% 61%;
@@ -65,11 +65,11 @@ body {
     --primary-foreground: 0 0% 9%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted: #272725;
+    --muted-foreground: #A1A1AA;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
+    --border: #404040;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
     --chart-1: 220 70% 50%;
@@ -97,18 +97,7 @@ body {
   }
 }
 
-.speak-logo-by {
-  color: transparent;
-}
-.dark .speak-logo-by {
-  color: #fff;
-}
-.speak-logo-daisys {
-  color: #111;
-}
-.dark .speak-logo-daisys {
-  color: #ECECEC;
-}
+
 
 /* Custom scrollbar for sidebar */
 .sidebar-scrollbar {

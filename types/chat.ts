@@ -5,6 +5,9 @@ export interface Message {
   timestamp: Date
 }
 
+/**
+ * Chat type used for chat data, both mock and real.
+ */
 export interface Chat {
   id: string
   name: string

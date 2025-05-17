@@ -1,7 +1,7 @@
 "use client"
 import Breadcrumb from "@/components/navbar/breadcrumb/breadcrumb"
 import UserDropdown from "@/components/navbar/user-menu-via-avatar/user-dropdown"
-import { usePlan } from "@/components/admin/plan-context"
+import { usePlan } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
 import { AudioUsageNavbar } from "@/components/navbar/audio-usage/audio-usage"
 import { useRouter } from "next/navigation"
 

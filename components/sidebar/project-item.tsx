@@ -46,7 +46,7 @@ export default function ProjectItem({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2 }}
-      className="p-2 rounded-lg hover:bg-secondary/50 cursor-pointer transition-colors mb-2 group relative"
+      className="p-2 rounded-lg hover:bg-[#7DF7FF]/20 cursor-pointer transition-colors mb-2 group relative"
       onMouseEnter={() => setShowOptions(true)}
       onMouseLeave={() => setShowOptions(false)}
       onClick={handleClick}
@@ -64,7 +64,7 @@ export default function ProjectItem({
         </div>
 
         <div className="flex-1 min-w-0">
-          <h3 className="font-medium text-sm truncate">{project.name}</h3>
+          <h3 className="font-medium text-sm truncate text-foreground">{project.name}</h3>
           <div className="flex items-center text-xs text-muted-foreground mt-1">
             <Clock className="h-3 w-3 mr-1" />
             <span>{project.lastEdited}</span>

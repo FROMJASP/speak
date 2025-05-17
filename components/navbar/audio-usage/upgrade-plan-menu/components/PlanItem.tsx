@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { Badge } from "@/components/ui/badge"
-import { formatAudioTime } from "@/data/pricing-plans"
+import { formatAudioTime } from "@/utils/time-format"
 import { BetaDealBadge } from "./BetaDealBadge"
 import type { PlanTier } from "@/data/pricing-plans"
 import { useRef } from "react"
@@ -39,7 +39,7 @@ export function PlanItem({
   return (
     <div
       className={`flex items-center justify-between py-2 px-2 rounded-sm mb-1 ${
-        isCurrentPlan ? "bg-muted" : "cursor-pointer hover:bg-muted hover:text-accent-foreground"
+        isCurrentPlan ? "bg-muted" : "cursor-pointer hover:bg-muted hover:text-foreground"
       }`}
       onClick={isCurrentPlan ? undefined : onClick}
       onMouseEnter={isCurrentPlan ? undefined : onMouseEnter}

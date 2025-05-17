@@ -79,7 +79,7 @@ export default function SidebarItemMenu({
     const rect = triggerRef.current.getBoundingClientRect()
     setPosition({
       top: rect.bottom + window.scrollY,
-      left: rect.right + window.scrollX - 150, // Menu width is 150px
+      left: rect.right + window.scrollX - 10, // Open more to the right
     })
   }
 
@@ -109,13 +109,13 @@ export default function SidebarItemMenu({
       <button
         ref={triggerRef}
         data-dropdown-trigger="true"
-        className="h-8 w-8 rounded-md flex items-center justify-center transition-opacity opacity-0 group-hover:opacity-100 hover:bg-secondary z-10 relative"
+        className="h-8 w-8 rounded-md flex items-center justify-center text-muted-foreground hover:text-primary bg-background border border-default shadow-sm hover:bg-muted transition-colors z-10 relative"
         onClick={handleTriggerClick}
         aria-label="Open menu"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <MoreHorizontal className="h-4 w-4" />
+        <MoreHorizontal className="h-5 w-5" />
       </button>
 
       {mounted &&
@@ -123,36 +123,44 @@ export default function SidebarItemMenu({
         createPortal(
           <div
             ref={menuRef}
-            className="fixed z-50 bg-popover rounded-md shadow-md border border-border w-48 py-1 overflow-hidden"
+            className="fixed z-50 bg-background rounded-md shadow-md border border-border min-w-[210px] py-1 overflow-hidden"
             style={{ top: `${position.top}px`, left: `${position.left}px` }}
             role="menu"
           >
             <button
-              className="w-full text-left px-3 py-2 text-sm flex items-center hover:bg-accent rounded-sm mx-1"
+              className="w-full text-left px-3 py-2 text-sm flex items-center text-foreground hover:bg-muted hover:text-primary rounded-sm mx-1 whitespace-nowrap"
               onClick={handleMenuItemClick(onRename)}
               role="menuitem"
             >
-              <Pencil className="h-4 w-4 mr-2" />
+              {/*
+                BACKEND INTEGRATION: When connected to the backend, implement the rename script API call here.
+                The 'onRename' callback should trigger a modal or inline edit, then call the backend to update the script name.
+              */}
+              <Pencil className="h-4 w-4 mr-2 text-foreground group-hover:text-primary" />
               <span>Rename</span>
             </button>
 
             <button
-              className="w-full text-left px-3 py-2 text-sm flex items-center hover:bg-accent rounded-sm mx-1"
+              className="w-full text-left px-3 py-2 text-sm flex items-center text-foreground hover:bg-muted hover:text-primary rounded-sm mx-1 whitespace-nowrap"
               onClick={handleMenuItemClick(onFavoriteToggle)}
               role="menuitem"
             >
-              <Star className={`h-4 w-4 mr-2 ${isFavorite ? "fill-amber-500 text-amber-500" : ""}`} />
+              <Star className={`h-4 w-4 mr-2 ${isFavorite ? "fill-amber-500 text-amber-500" : "text-foreground group-hover:text-primary"}`} />
               <span>{isFavorite ? "Remove from Favorites" : "Add to Favorites"}</span>
             </button>
 
             <div className="h-px bg-border my-1 mx-2" />
 
             <button
-              className="w-full text-left px-3 py-2 text-sm flex items-center hover:bg-accent rounded-sm mx-1 text-red-500"
+              className="w-full text-left px-3 py-2 text-sm flex items-center text-red-500 hover:bg-muted hover:text-red-600 rounded-sm mx-1 whitespace-nowrap"
               onClick={handleMenuItemClick(onDelete)}
               role="menuitem"
             >
-              <Trash className="h-4 w-4 mr-2" />
+              {/*
+                BACKEND INTEGRATION: When connected to the backend, implement the delete script API call here.
+                The 'onDelete' callback should show a confirmation, then call the backend to delete the script.
+              */}
+              <Trash className="h-4 w-4 mr-2 text-red-500 group-hover:text-red-600" />
               <span>Delete</span>
             </button>
           </div>,

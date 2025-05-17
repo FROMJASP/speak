@@ -20,4 +20,5 @@ export const userData = {
   language: "english",
   signupDate: getTwoWeeksAgoDate(),
   lastLogin: "2023-11-28",
+  role: "admin",
 }

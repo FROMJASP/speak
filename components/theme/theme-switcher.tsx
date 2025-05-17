@@ -18,6 +18,15 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
   const buttonSize = size === "sm" ? "w-6 h-6" : "w-8 h-8"
   const containerPadding = size === "sm" ? "p-0.5" : "p-1"
 
+  const getButtonClass = (active: boolean, themeType: string) => {
+    if (active) {
+      if (themeType === "system") return "bg-muted border border-primary text-primary shadow-sm"
+      if (themeType === "light") return "bg-muted border border-primary text-primary"
+      if (themeType === "dark") return "bg-primary border border-primary text-background"
+    }
+    return "text-muted-foreground hover:text-primary"
+  }
+
   return (
     <TooltipProvider>
       <div className={`bg-muted dark:bg-[#232323] rounded-full ${containerPadding} flex items-center`}>
@@ -27,9 +36,7 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
               onClick={() => setTheme("system")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "system"
-                  ? "bg-accent-light dark:bg-[#353535] border border-primary text-bold shadow-sm"
-                  : "text-muted-foreground hover:text-bold",
+                getButtonClass(theme === "system", "system"),
               )}
               aria-label="System theme"
             >
@@ -47,9 +54,7 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
               onClick={() => setTheme("light")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "light"
-                  ? "bg-accent-light border border-primary text-bold"
-                  : "text-muted-foreground hover:text-bold",
+                getButtonClass(theme === "light", "light"),
               )}
               aria-label="Light theme"
             >
@@ -67,9 +72,7 @@ export default function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
               onClick={() => setTheme("dark")}
               className={cn(
                 `${buttonSize} rounded-full flex items-center justify-center transition-colors`,
-                theme === "dark"
-                  ? "bg-[#353535] border border-primary text-bold-dark"
-                  : "text-muted-foreground hover:text-bold-dark",
+                getButtonClass(theme === "dark", "dark"),
               )}
               aria-label="Dark theme"
             >

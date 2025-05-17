@@ -4,7 +4,7 @@ import { PlusCircle } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import { PlanTier } from "@/data/pricing-plans"
-import ChatName from "./rename-script"
+import ScriptName from "./script-name"
 
 interface BreadcrumbProps {
   projectName: string
@@ -28,7 +28,7 @@ export default function Breadcrumb({ projectName, projectId, onProjectRename, on
       </button>
       <div className="text-[#E5DED3] dark:text-[#313131] text-lg rotate-12">/</div>
       <div className="flex items-center gap-2">
-        <ChatName name={projectName} chatId={projectId} onRename={onProjectRename} />
+        <ScriptName name={projectName} chatId={projectId} onRename={onProjectRename} />
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

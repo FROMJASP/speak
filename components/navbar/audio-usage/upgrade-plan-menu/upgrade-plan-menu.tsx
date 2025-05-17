@@ -11,7 +11,7 @@ import { StatusMessage } from "./components/StatusMessage"
 import { BetaDealTooltip } from "./components/BetaDealTooltip"
 import { getUsageColorClass, getUsageTextColorClass } from "@/utils/usage-utils"
 import type { PlanTier } from "@/data/pricing-plans"
-import { usePlan } from "@/components/admin/plan-context"
+import { usePlan } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
 import { pricingPlans } from "@/data/pricing-plans"
 import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
@@ -123,7 +123,7 @@ export function PlanUpgradeDropdown({
       <div className="flex items-center justify-between mb-4">
         <h4 className="text-base font-medium">Upgrade your plan</h4>
 
-        <Button variant="ghost" size="icon" className="h-6 w-6 rounded-full" onClick={onPricingInfoClick}>
+        <Button variant="ghost" size="icon" className="h-6 w-6 rounded-full bg-muted border border-default hover:bg-[#D7D6CF] dark:hover:bg-muted" onClick={onPricingInfoClick}>
           <Info className="h-4 w-4" />
           <span className="sr-only">Pricing information</span>
         </Button>
@@ -216,7 +216,7 @@ export function PlanUpgradeDropdown({
         >
           <Button
             variant="outline"
-            className="w-full mb-3 bg-background text-foreground hover:bg-muted hover:text-foreground"
+            className="w-full mb-3 bg-background text-foreground hover:bg-[#D7D6CF] dark:hover:bg-muted hover:text-foreground"
             onClick={onUpgradeClick}
           >
             {getButtonText()}
@@ -341,7 +341,7 @@ export function UpgradePlanMenu({ onClose, triggerRef }: { onClose: () => void, 
       />
       <button
         onClick={onClose}
-        className="absolute top-3 right-3 text-muted-foreground hover:text-foreground rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-primary"
+        className="absolute top-3 right-3 text-muted-foreground hover:text-foreground rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-primary bg-muted border border-default hover:bg-[#D7D6CF] dark:hover:bg-muted"
         aria-label="Close upgrade plan menu"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/></svg>

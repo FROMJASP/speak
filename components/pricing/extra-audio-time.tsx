@@ -1,5 +1,5 @@
 import { PlusCircle } from "lucide-react"
-import { formatAudioTimeExtra } from "@/data/pricing-plans"
+import { formatAudioTimeExtra } from "@/utils/time-format"
 
 interface ExtraAudioTimeProps {
   minutes: number

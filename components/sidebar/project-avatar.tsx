@@ -166,11 +166,11 @@ export default function ProjectAvatar({ name, size = 40 }: ProjectAvatarProps) {
 
   return (
     <div
-      className={`w-full h-full rounded-md bg-[#E5E5E5] dark:bg-transparent bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden border border-border`}
+      className={`w-full h-full rounded-md bg-muted dark:bg-transparent bg-gradient-to-br ${gradientClass} relative flex items-center justify-center overflow-hidden border border-border`}
       style={{ width: size, height: size }}
     >
       {React.cloneElement(getPatternElement(name), { className: 'absolute inset-0 opacity-40 z-0' })}
-      <span className="font-semibold text-sm relative z-10 drop-shadow-md text-[#424041] dark:text-white">{initials}</span>
+      <span className="font-semibold text-sm relative z-10 drop-shadow-md text-foreground">{initials}</span>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { type VoiceScript, getScriptById } from "@/data/sample-scripts"
+import { type VoiceScript, getScriptById } from "@/data/sample/sample-scripts"
 import ScriptEditor from "./script-editor"
 import ScriptWelcome from "./script-welcome"
 import type { Chat } from "@/types/chat"

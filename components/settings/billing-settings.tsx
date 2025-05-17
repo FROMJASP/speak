@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Clock, CreditCard, Download, ExternalLink } from "lucide-react"
-import { usePlan } from "@/components/admin/plan-context"
-import { pricingPlans, formatAudioTime } from "@/data/pricing-plans"
+import { usePlan } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
+import { formatAudioTime } from "@/utils/time-format"
 
 export default function BillingSettings() {
   const { currentPlan, usedSeconds } = usePlan()

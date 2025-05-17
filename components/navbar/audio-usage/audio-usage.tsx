@@ -7,10 +7,11 @@ import { AudioUsageBar } from "./upgrade-plan-menu/components/AudioUsageBar"
 import {  UpgradePlanMenu } from "./upgrade-plan-menu/upgrade-plan-menu"
 
 import { getUsageColorClass,  getUsageTextColorClass } from "@/utils/usage-utils"
-import { pricingPlans, formatAudioTime, type PlanTier } from "@/data/pricing-plans"
+import { pricingPlans, type PlanTier } from "@/data/pricing-plans"
+import { formatAudioTime } from "@/utils/time-format"
 
 import { CalendarDays, ChevronDown } from "lucide-react"
-import { usePlan } from "@/components/admin/plan-context"
+import { usePlan } from "@/components/navbar/user-menu-via-avatar/admin/plan-context"
 
 // Helper function to format time without seconds
 const formatTimeWithoutSeconds = (seconds: number): string => {
@@ -42,7 +43,7 @@ export function AudioUsageNavbar() {
   return (
     <div
       ref={triggerRef}
-      className="flex items-center gap-2 cursor-pointer group px-2 py-1.5 rounded-md hover:bg-secondary/30 transition-colors min-w-[320px]"
+      className="flex items-center gap-2 cursor-pointer group px-2 py-1.5 rounded-md hover:bg-muted/30 transition-colors min-w-[320px]"
       onClick={() => setUpgradeMenuOpen(true)}
       tabIndex={0}
       role="button"

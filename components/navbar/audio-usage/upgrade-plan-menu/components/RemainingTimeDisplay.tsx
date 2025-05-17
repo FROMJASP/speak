@@ -1,4 +1,4 @@
-import { formatAudioTime } from "@/data/pricing-plans"
+import { formatAudioTime } from "@/utils/time-format"
 
 interface RemainingTimeDisplayProps {
   remainingSeconds: number

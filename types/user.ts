@@ -11,6 +11,11 @@ export interface UserProfile {
   signupDate: string
   lastLogin: string
   preferences: UserPreferences
+  /**
+   * User role for access control (e.g., 'admin', 'user').
+   * BACKEND CONTRACT: Must be provided by /api/me or session endpoint.
+   */
+  role: string
 }
 
 export interface UserPreferences {
