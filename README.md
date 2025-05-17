@@ -4,7 +4,7 @@ SPEAK is a new UI/UX proposal built with Next.js, React, TypeScript and Tailwind
 
 ---
 
-## Quick Start Guide for Complete Beginners
+## Quick Start
 
 Welcome! If you want to work on this project locally, you can try the steps below.
 
