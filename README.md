@@ -251,6 +251,6 @@ I sometimes like to use Browser Tools MCP especially when dealing with network r
 - Browser Tools MCP is available in Cursor for advanced debugging, testing, and auditing.
 - Use it to view console logs, inspect network requests, run accessibility/performance/SEO audits, and debug/optimize the app.
 - Open the MCP panel in Cursor (sidebar or command palette) to access these tools.
-- You can ask the AI assistant to fetch logs, run audits, or help interpret results at any time.
+- You can ask the AI assistant to fetch logs, run audits, or help interpret results at any time. I have also mentioned this in my Cursor Rules so if needed it often does it automatically for you (results may vary)
 
 ---
