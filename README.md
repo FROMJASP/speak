@@ -246,6 +246,8 @@ In the past months I have refined my Cursor Rules. This is what I'm currently us
 
 ## Browser Tools MCP (Cursor Rules)
 
+I sometimes like to use Browser Tools MCP especially when dealing with network related stuff:
+
 - Browser Tools MCP is available in Cursor for advanced debugging, testing, and auditing.
 - Use it to view console logs, inspect network requests, run accessibility/performance/SEO audits, and debug/optimize the app.
 - Open the MCP panel in Cursor (sidebar or command palette) to access these tools.
