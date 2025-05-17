@@ -46,7 +46,7 @@ Welcome! If you want to work on this project locally, you can try the steps belo
 - If you know how, use Git to clone the repository:
 
   ```sh
-  git clone <your-repo-url>
+  git clone https://github.com/FROMJASP/speak.git
   ```
 
 - Open the project folder in Cursor (File > Open Folder)
