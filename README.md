@@ -169,7 +169,7 @@ It's a good idea to create your own branch when working on new features or fixes
 
 ## Using Browser Tools MCP
 
-We use **Browser Tools MCP** for advanced debugging, testing, and auditing in this project. It helps with:
+I use **Browser Tools MCP** for debugging, testing, and auditing in this project. It may help with:
 
 - Viewing console logs and errors
 - Inspecting network requests and errors
